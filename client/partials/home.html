@@ -1,0 +1,45 @@
+<div ng-controller="HomeCtrl">
+<div class="toolBar">
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+      <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+    </button></div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button></div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button></div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </div>
+
+  </div>
+</div>
+  <div class="row">
+    <div class="col-md-2 tree-browser">
+      <js-tree tree-events="select_node:nodeSelected" tree-ajax="/api/tree" tree-core="tree_core" tree-plugins="dnd"></js-tree>
+    </div>
+    <div class="col-md-6 dataTree">
+
+    </div>
+    <div class="col-md-4 file-viewer">
+      <pre><code>{{fileViewer}}</code></pre>
+    </div>
+  </div>
+</div>

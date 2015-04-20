@@ -1,0 +1,31 @@
+body{
+  background-color:#7092BF;
+}
+.tree-browser {
+  overflow: auto;
+  border-right:1px solid #B2B4B8;
+  font-size: 15px;
+}
+.file-viewer {
+  padding-left: 50px;
+  border-left:1px solid #B2B4B8;
+  overflow: auto;
+}
+.btn-toolbar{
+  padding-bottom:15px;
+  margin:0;
+}
+.dataTree{
+  overflow: auto;
+}
+.jstree-custom-folder{
+  background-image: url('../imgs/folder_icon.png') !important;
+  background-position: 0 !important;
+}
+.jstree-custom-file {
+  background-image: url('../imgs/file_icon.png') !important;
+  background-position: 0 !important;
+}
+@media (min-width: 1200px){.container {
+  width: 100%;
+}}

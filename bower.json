@@ -1,0 +1,24 @@
+{
+  "name": "ProFiler",
+  "version": "0.1.0",
+  "authors": [
+    "Ilan Oksenberg"
+  ],
+  "description": "Modified File Browser Web App - Get Your Own Point of View",
+  "main": "server/app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-route": "~1.2.23",
+    "bootstrap": "~3.2.0",
+    "jstree-directive": "~0.1.0",
+    "jquery": "~2.1.1"
+  }
+}
