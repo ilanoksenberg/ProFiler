@@ -30,7 +30,7 @@
 
   /* Serve a Resource */
   router.get('/api/resource', function(req, res) {
-    res.send(fs.readFileSync(req.query.resource, 'UTF-8'));
+    res.send(fs.readFile(req.query.resource, 'UTF-8'));
   });
 
   function processReq(_p, res) {
@@ -55,6 +55,8 @@
         "selected": false
       },
       "li_attr": {
+        //"root": path
+        "parent": path.join(_p),
         "base": path.join(_p, f),
         "isLeaf": !s.isDirectory()
       },

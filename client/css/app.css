@@ -18,6 +18,10 @@ body{
 .dataTree{
   overflow: auto;
 }
+pre{
+  background-color: #7092BF;
+  border: none;
+}
 .jstree-custom-folder{
   background-image: url('../imgs/folder_icon.png') !important;
   background-position: 0 !important;
