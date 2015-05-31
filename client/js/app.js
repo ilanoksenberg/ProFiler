@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  window.app = angular.module('Pro', ['ngRoute', 'jsTree.directive']).
+  window.app = angular.module('ProFiler', ['ngRoute', 'jsTree.directive']).
   config(['$routeProvider',
     function($routeProvider) {
       $routeProvider.

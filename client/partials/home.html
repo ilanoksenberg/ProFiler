@@ -1,45 +1,205 @@
 <div ng-controller="HomeCtrl">
-<div class="toolBar">
-  <div class="btn-toolbar" role="toolbar">
-    <div class="btn-group">
-      <button type="button" class="btn btn-default" aria-label="Left Align">
-      <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-    </button></div>
-    <div class="btn-group">
-      <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-      </button>
-    </div>
-    <div class="btn-group">
-        <button type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button></div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button></div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-        </button>
-      </div>
+    <div class="toolBar">
+      <div class="btn-toolbar" role="toolbar">
 
-  </div>
-</div>
-  <div class="row">
-    <div class="col-md-2 tree-browser">
-      <js-tree tree-events="select_node:nodeSelected" tree-ajax="/api/tree" tree-core="tree_core" tree-plugins="dnd"></js-tree>
-    </div>
-    <div class="col-md-6 dataTree">
+          <form id="s">
+              <div class="btn-group" id="buildTreeRight">
+                  <button type="button" id="buildTree" class="btn btn-default" aria-label="left Align">
+                      <span class="glyphicon glyphicon-buildTree" aria-hidden="true"></span>
+                  </button>
+              </div>
+              <button type="submit" id="submit" class="btn btn-default"  aria-label="left Align">Search</button>
+              <input type="search" class="ng-tree-search" placeholder="Search..." id="q" />
+
+          </form>
+          <div class="btn-group">
+              <button id="create"type="button" class="btn btn-default" aria-label="left Align">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              </button>
+          </div>
+          <div class="btn-group">
+              <button class='btn btn-danger btn-default' id="reset" type="submit" name="remove_levels" aria-label="left Align" value="delete"><span class="fa fa-times"></span> Reset</button>
+          </div>
+
+
+
+
+      </div>
+        <h3 id="buildTreeHeader">{{buildHeader}}</h3>
+     </div>
+
+    <div class="row">
+        <div class="col-md-3 tree-browser ">
+          <js-tree tree-events="select_node:nodeSelected" tree-ajax="/api/tree" tree-core="tree_core" tree-plugins="dnd,state"></js-tree>
+
+        </div>
+        <div class="col-md-3 data-tree">
+
+            <pre><code>{{dataTree}}</code></pre>
+
+        </div>
+        <div class="col-md-6 file-viewer">
+            <pre><code>{{fileViewer}}</code></pre>
+        </div>
+        <div id="step1">
+            <div id = "step1_Img"></div>
+            <div id = "step1_Txt"> You can create your root folder</div>
+            <button id="next"type="button" class="btn btn-default" aria-label="right Align">
+                Step 2
+            </button>
+
+        </div>
+        <div id="step2">
+            <div id = "step2_Img"></div>
+            <div id = "step2_Txt">Drag & Drop files and folders</div>
+
+        </div>
 
     </div>
-    <div class="col-md-4 file-viewer">
-      <pre><code>{{fileViewer}}</code></pre>
-    </div>
-  </div>
+
 </div>
+<script>
+    $(document).ready(function() {
+        var trees = [".data-tree",".file-viewer"];
+        createJStree(trees);
+
+        /*------------------------------handling changes-----------------------*/
+        $('.tree-browser').bind("DOMSubtreeModified",function(){
+            if(($('.jstree-container-ul').height())>'720'){
+                $('body').css("overflow-y","auto");
+            }
+            else{
+                $('body').css("overflow-y","hidden");
+            }
+
+        });
+        $('.data-tree,.file-viewer').bind("DOMSubtreeModified",function(){
+            var len = $('.data-tree li,.file-viewer li').length;
+            if(len===0){
+                 $('#reset').prop("disabled",true);
+            }
+            else{
+                 $('#reset').prop("disabled",false);
+             }
+        });
+         $('.data-tree').bind("DOMSubtreeModified",function(){
+            var len = $('.data-tree li').length;
+            if(len===0){
+                $('#submit').prop("disabled",true);
+                $( "#buildTree" ).prop( "disabled", true );
+            }
+            else{
+                $('#submit').prop("disabled",false);
+            }
+        });
+        $('.file-viewer').bind("DOMSubtreeModified",function(){
+            var len = $('.file-viewer li').length;
+            if(len===0){
+                $('#create').prop("disabled",false);
+            }
+            else{
+                $('#create').prop("disabled",true);
+            }
+        });
+
+    /*------------------------Reset button-------------------------------------*/
+        $('#reset').click(function() {
+            bootbox.confirm("Are you sure want to reset?", function(result) {
+                if(result) {
+                    $('.file-viewer').jstree("destroy").empty();
+                    $('.data-tree').jstree("destroy").empty();
+                    $( "#reset" ).prop( "disabled", true );
+                    $('#step1').css("display","none");
+                    $('#step2').css("display","none");
+                    $('#q').val("");
+                    createJStree(trees);
+
+                }
+            });
+        });
+
+
+    /*------------------------Cookie handling-------------------------------------*/
+
+        var Cookie = readCookie();
+        hasCookie(Cookie);
+
+    /*------------------------Guide handling-------------------------------------*/
+
+        $( "#reset" ).prop( "disabled", true );
+        $('#next').click(function(){
+            $('#step1').fadeOut(300);
+            $('#step2').css("display","inline-block");
+            setTimeout(function(){
+                $('#step2').fadeOut(300);
+
+            }, 5000);
+            Cookie = readCookie();
+        });
+
+        $('#create').click(function(){
+            if(!(hasCookie(Cookie))) {
+                $('#step1').fadeOut(300);
+                $('#step2').css("display", "inline-block");
+            }
+            Cookie = readCookie();
+        })
+
+
+
+     /*-----------------------------------Loader-----------------------------------*/
+
+        $('.loader').fadeOut();
+    });
+
+    /*----------------------Cookie handling Functions-----------------------------*/
+        function hasCookie(Cookie){
+            if (Cookie) {
+                $('#step1').css("display","none");
+                $('#step2').css("display","none");
+                return true;
+            }
+            else {
+                createCookie('admin', 'adminCookie', 7);
+                return false;
+            }
+        }
+        function readCookie(){
+            return document.cookie;
+        }
+        function createCookie(name,value,days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name+"="+value+expires+"; path=/";
+        }
+
+
+
+    /*------------------------Create Jstree objects-------------------------------------*/
+
+    function createJStree(trees){
+        trees.forEach(function(value){
+            var node = $(value).jstree({
+                'core': {
+                    "check_callback": true,
+                    'data': [
+
+
+                    ]
+                },
+                "plugins": [
+                    "contextmenu", "dnd", "search",
+                    "state", "types", "wholerow"
+                ]
+            });
+         })
+
+
+    }
+/*----------------------------------------------------------------------------*/
+
+</script>
