@@ -10,7 +10,7 @@
         controller: 'HomeCtrl'
       }).
       otherwise({
-        redirectTo: '/home'
+        redirectTo: '/'
       });
     }
   ]);

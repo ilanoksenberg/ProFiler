@@ -14,7 +14,7 @@
   router.get('/api/tree', function(req, res) {
     var _p;
     if (req.query.id == 1) {
-      _p = path.resolve(__dirname, '../../../../');
+      _p = path.resolve(__dirname, '../../../../talcohen/profiler');
       processReq(_p, res);
 
     } else {
@@ -31,7 +31,6 @@
   router.get('/api/resource', function(req, res) {
     res.send(fs.readFileSync(req.query.resource, 'UTF-8'));
   });
-
   function processReq(_p, res) {
     var resp = [];
     fs.readdir(_p, function(err, list) {
@@ -54,9 +53,10 @@
 
           "state": {
               "key": "state",
-            "opened": false,
-            "disabled": false,
-            "selected": false
+              "loaded":true,
+               "opened":true,
+              "disabled": false,
+              "selected": false
           },
           "li_attr": {
             "parent": path.join(_p),
@@ -65,11 +65,7 @@
             "isLeaf": !s.isDirectory()
           },
           "children": s.isDirectory(),
-          "plugins" : ["search","state"],
-        rules : {
-            draggable : "all",
-            drag_copy : "on"
-        },
+
         callback : {
             beforechange: function() { log("About to change"); return true; },
             beforeopen  : function() { log("About to open"); return true; },
@@ -133,11 +129,11 @@ function fileType(text){
           type+='-css';
           break;
       case 'html':
-          type+='-css';
+          type+='-html';
           break;
       case 'zip':
       case 'rar':
-          type+='-css';
+          type+='-zip';
           break;
       default :
           break;

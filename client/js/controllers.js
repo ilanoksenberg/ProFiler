@@ -4,36 +4,50 @@
     app.controller('HomeCtrl', ['$scope', '$route', '$window', 'FetchFileFactory',
         function ($scope, $route, $window, FetchFileFactory) {
 
-            //  $scope.fileViewer = 'Please select a file to view its contents';
             $scope.tree_core = {
 
-                multiple: true,
-                //search:true,// disable multiple node selection
 
                 check_callback: function (operation, node, node_parent, node_position, more) {
                     // operation can be 'create_node', 'rename_node', 'delete_node', 'move_node' or 'copy_node'
                     // in case of 'rename_node' node_position is filled with the new node name
 
-                    if (operation === 'move_node') {
-                        return false;   // disallow all dnd operations
-                    }
+
                     return true;  // allow all other operations
                 }
+
+                //multiple: true
+
+            };
+            $scope.tree_rules = {
+                    multitree : true,
+                    always_copy : true,
+                    draggable : "all"
+
             };
 
 
             $scope.buildHeader = "Build Your Own Tree";
-           var tree= $('data-tree');
+
+            $scope.dndStart = function(data, element,helper,event){
+                alert('vv');
+                console.log('yes');
+                debugger
+
+            };
+            $scope.dndMove = function(data, element,helper,event){
+                alert('vv');
+                debugger
+
+            };
+            /*------------------------handle node selected-------------------------------------*/
+
             $scope.nodeSelected = function (e, data) {
-
-                $('#step2').css("display","none");
-
-
+                console.log("yes");
                 var treeNode = data.node;
-
-
-
                 var _l = data.node.li_attr;
+                console.log(treeNode.id);
+                /*------------------handle files selected---------------*/
+
                 if (_l.isLeaf) {
                      FetchFileFactory.fetchFile(_l.base).then(function (data) {
                         var _d = data.data;
@@ -43,7 +57,11 @@
                         }
                         var temp = _l.fileType.split('-');
                         if (temp[temp.length - 1] == 'pdf') {
-
+                            /*var win = window.open("file://"+treeNode.id, null, "width=400,height=300");
+                            var doc = win.document;
+                            doc.open("text/html");
+                            doc.write("Session");
+                            doc.close();*/
 
                         }
                         else if ((treeNode.text[0] != '.'))
@@ -118,59 +136,8 @@
 
                 }
 
-
-
             };
 
-            var tree= $('.data-tree').jstree(true);
-            console.log(tree);
-            /*-----------------------------------search handling-----------------------------------*/
-            $("#s").submit(function (e) {
-                e.preventDefault();
-                 var searchResult = $('.data-tree').jstree('search', $("#q").val());
-                $( ".jstree-search" ).css( "color", "green");
-                var $j_object = $(".jstree-search").parent();
-                alert($j_object.size());
-                var classSearch = '.jstree-search';
-                var resultsArray = $(classSearch).parent();
-                $scope.fileViewer = resultsArray[0];
-                console.log(resultsArray.length);
-                console.log(resultsArray[0]);
-                console.log(searchResult);
-                $('#s').blur();
-                $( "#buildTree" ).prop( "disabled", false );
-
-            });
-
-            /*-----------------------------------build tree-----------------------------------*/
-
-            $("#buildTree").click(function(){
-                $('.file-viewer').jstree("destroy").empty();
-                var node = $('.file-viewer').jstree({
-                    'core': {
-                        "check_callback": true,
-                        'data': [
-
-                            {
-                                'text': 'New Tree',
-                                'icon': 'jstree-custom-folder',
-                                'state': {
-                                    "key" : "state",
-                                    'opened': false,
-                                    'selected': true
-                                },
-                                'children': ['.localized']
-
-                            }
-                        ]
-                    },
-                    "plugins": [
-                        "contextmenu", "dnd", "search",
-                        "state", "types", "wholerow"
-                    ]
-                });
-
-            });
 
             /*-----------------------------------create node-----------------------------------*/
 
@@ -186,7 +153,6 @@
                                 'text': 'New Folder',
                                 'icon': 'jstree-custom-folder',
                                 'state': {
-                                    "key" : "state",
                                     'opened': false,
                                     'selected': true
                                 }
@@ -243,7 +209,7 @@
 
 
 
-function split(children) {
+/*function split(children) {
     var children1 = [];
     var children2 = [];
     children1 = children.split(',');
@@ -258,4 +224,4 @@ function split(children) {
     });
 
     return children2;
-}
+}*/
