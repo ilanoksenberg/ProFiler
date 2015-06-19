@@ -43,6 +43,7 @@ hr {
   overflow: auto;
 
 }
+
 .btn-toolbar{
   padding-top: 7px;
   padding-bottom:6px;
@@ -194,7 +195,7 @@ pre{
 #step1{
   position: absolute;
   left: 900px;
-  -webkit-animation: fadein 5s;
+  -webkit-animation: fadein 2s;
 }
 #step1_Img{
   position: relative;
@@ -204,8 +205,8 @@ pre{
   z-index: 999;
   height: 261px;
   width:169px;
-  -webkit-animation: slideUp 3s; /* Chrome, Safari, Opera */
-  animation: slideUp 3s;
+  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera */
+  animation: slideUp 2s;
 }
 
 #step1_Txt{
@@ -216,7 +217,7 @@ pre{
   height: 70px;
   width:270px;
   color: #000066;
-
+  text-shadow: 0px 0px 3px #fff;
 }
 
 
@@ -240,7 +241,7 @@ pre{
 #step2{
    position: absolute;
   left: 357px;
-  -webkit-animation: fadein 5s;
+  -webkit-animation: fadein 2s;
 }
 #step2_Img{
   position: relative;
@@ -250,8 +251,8 @@ pre{
   z-index: 999;
   height: 261px;
   width:169px;
-  -webkit-animation: slideUp 3s; /* Chrome, Safari, Opera */
-  animation: slideUp 3s;
+  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera */
+  animation: slideUp 2s;
 }
 #step2_Txt{
   position: relative;
@@ -261,11 +262,12 @@ pre{
   width:300px;
   color: #000066;
   font-size: 20px;
+  text-shadow: 0px 0px 3px #fff;
 }
 
 #step3{
    position: absolute;
-  -webkit-animation: fadein 5s;
+  -webkit-animation: fadein 2s;
 }
 #step3_Img{
   position: relative;
@@ -275,8 +277,8 @@ pre{
   z-index: 999;
   height: 261px;
   width:169px;
-  -webkit-animation: slideUp 3s; /* Chrome, Safari, Opera */
-  animation: slideUp 3s;
+  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera */
+  animation: slideUp 2s;
 }
 #step3_Txt{
   position: relative;
@@ -286,6 +288,10 @@ pre{
   width:300px;
   color: #000066;
   font-size: 20px;
+  text-shadow: 0px 0px 3px #fff;
+}
+#step3 h3{
+  font-weight: bold;
 }
 
 #step4{
@@ -311,6 +317,8 @@ pre{
   width: 183px;
   color: #000066;
   font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
 }
 #next4{
   position: relative;
@@ -342,6 +350,8 @@ pre{
   width: 283px;
   color: #000066;
   font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
 }
 #next5{
   position: relative;
@@ -375,6 +385,8 @@ pre{
   width: 305px;
   color: #000066;
   font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
 }
 #next6{
   position: relative;
@@ -398,7 +410,7 @@ pre{
 }
 .nav>li>a:hover{
   background-color: #c8cbc2;
-}
+}s
 .nav {
   margin-bottom: -10px;
   margin-top: -10px;
@@ -448,6 +460,6 @@ pre{
 
 }
 .get-tree{
-  z-index: 34;
+  z-index: 3224;
 
 }

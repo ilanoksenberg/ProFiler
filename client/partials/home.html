@@ -92,7 +92,7 @@
                       <span  class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                     </button>
                       <ul class="list">
-                  </ul>
+                       </ul>
               </div>
           </div>
 
@@ -108,7 +108,7 @@
 
     <div class="row">
         <div class="col-md-3 tree-browser ">
-          <js-tree tree-events="select_node:nodeSelected"  tree-events="dnd_move:dndMove" tree-ajax="/api/tree" tree-core="tree_core"  tree-rules = "tree_rules" tree-plugins="dnd,state,types"></js-tree>
+          <js-tree tree-events="select_node:nodeSelected"  tree-events="dnd_move:dndMove" tree-ajax="/api/tree" tree-core="tree_core"  tree-rules = "tree_rules" tree-plugins="dnd,state,types,cookies"></js-tree>
         </div>
         <div class="dynNav col-md-3">
 
@@ -246,13 +246,11 @@
 
             debugger
         });*/
-        $(function(){
-            $('.size').styleddropdown();
-        });
+
         (function($){
             $.fn.styleddropdown = function(){
                 return this.each(function(){
-                    var obj = $(this)
+                    obj = $(this)
                     obj.find('.field').click(function() { //onclick event, 'list' fadein
                         obj.find('.list').fadeIn(400);
 
@@ -268,7 +266,8 @@
                                 });
                     });
 
-                    obj.find('.list li').click(function() { //onclick event, change field value with selected 'list' item and fadeout 'list'
+                    obj.find('.list li').click(function() {
+                     debugger//onclick event, change field value with selected 'list' item and fadeout 'list'
                         obj.find('.field')
                                 .val($(this).html())
                                 .css({
@@ -280,6 +279,10 @@
                 });
             };
         })(jQuery);
+
+        $(function(){
+            $('.size').styleddropdown();
+        });
         $('#savedtreemodal').on('shown.bs.modal', function () {
 
             $('#savedtreemodal').focus();
@@ -352,10 +355,12 @@
 
         $('.tree-browser').bind("DOMSubtreeModified",function(){
            // $('li').removeClass('jstree-closed').addClass('jstree-open');
-            $('.tree-browser').bind("create_node",function(e,data){
-                console.log('hi');
-            });
+
+
+           // $('ul').children().find('.jstree-children').hide();
            // $('li').attr("aria-expanded","true");
+           // $('.jstree-open').removeClass('jstree-open').addClass('jstree-close');
+           // $('li').attr("aria-expanded","false");
 
 
             if(($('.jstree-container-ul').height())>'720'){
@@ -469,6 +474,8 @@
         });
         $('#next6').click(function(){
             $('#step6').fadeOut(300);
+            $('.row').css("opacity",'1');
+
             //$('#step6').css("display","inline-block");
             setTimeout(function(){
                 // $('#step2').fadeOut(300);
@@ -550,20 +557,25 @@
         for ( var i = 0, len = localStorage.length; i < len; ++i ) {
             console.log( localStorage.getItem( localStorage.key( i ) ) );
         }
-        $('.list').empty();
+
+       $('.list').empty();
 
 
+        var str = '';
         var str = '<h3>Choose Your Tree</h3>';
         $('.list').append(str);
         for (var key in localStorage){
             if(key.toString().includes("treeName")){
 
                 var name = key.toString().substring(11, key.length);
-                $('.list').append('<li><button class="get-tree">'+name+'</button><a class="deletetree">X</a></li>');
+                $('.list').append('<li>'+name+'</li>');
+              // str+=('<li id="get-tree">'+name+'</li>');
 
             }
-            console.log(key)
-        }
+            console.log(key);
+        };
+        console.log(str);
+
 
 
 
@@ -571,16 +583,12 @@
 
 
     });
-    $('.list li>button.get-tree').click(function(){
-       debugger
+
+    $('.list li').click(function(){
+        debugger
     });
     $('.get-tree').click(function(){
-        debugger
-    });
-    $('.get-tree').on('click',function(){
-         //var temp = $(this).sibling();
-        debugger
-
+       debugger
     });
     $('.deletetree').on('click',function(){
         console.log('delete');
@@ -661,6 +669,7 @@
             }
             else {
                 createCookie('admin', 'adminCookie', 7);
+                $('.row').css("opacity",'0.25');
                 return false;
             }
         }

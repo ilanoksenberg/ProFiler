@@ -208,20 +208,3 @@
 
 
 
-
-/*function split(children) {
-    var children1 = [];
-    var children2 = [];
-    children1 = children.split(',');
-    children1.forEach(function (entry) {
-        console.log(entry);
-        temp = entry.split('/');
-        console.log(temp);
-        temp = temp[temp.length - 1];
-        temp = temp.substring(0, temp.length - 1);
-        children2.push(temp);
-
-    });
-
-    return children2;
-}*/
