@@ -60,7 +60,11 @@
     </div>
     <div class="toolBar">
       <div class="btn-toolbar" role="toolbar">
-
+          <div class="btn-group" id="guidehelp">
+              <button id="help" type="button" class="btn btn-default" aria-label="right Align" >
+                  <span  class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+              </button>
+          </div>
           <form id="s">
               <div class="btn-group" id="copytoRight">
                   <button type="button" id="copyto" class="btn btn-default" aria-label="left Align">
@@ -76,6 +80,7 @@
               <input type="search" class="ng-tree-search" placeholder="Search" id="q" />
 
           </form>
+
           <div class="btn-group">
               <button id="create"type="button" class="btn btn-default" aria-label="left Align">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
@@ -104,7 +109,11 @@
 
       </div>
         <h3 id="buildTreeHeader">{{buildHeader}}</h3>
-     </div>
+        <h3 id="searchsectionHeader">{{searchHeader}}</h3>
+
+    </div>
+
+
 
     <div class="row">
         <div class="col-md-3 tree-browser ">
@@ -122,8 +131,7 @@
 
                     <li id="last"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
                 </ul>
-                </p>
-            <p>
+
                     <!-- Tab panes from Bootstrap 3 -->
                 <div class="tab-content">
                     <div class="tab-pane fade in active data-tree" tree-ajax="/api/tree" id="tab1"><p>Content tab 1</p></div>
@@ -143,8 +151,6 @@
 
                     <li id="last2"><a href="#AddTab"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
                 </ul>
-            </p>
-            <p>
                     <!-- Tab panes from Bootstrap 3 -->
                 <div class="tab-content">
                     <div class="tab-pane fade in active file-viewer" id="tab2"><p>Content tab 1</p></div>
@@ -164,13 +170,15 @@
                         <form action="post">
                             <div class="form-group">
                                 <label for="treeName" class="control-label">Tree Name:</label>
-                                <input type="text" name="treeName" class="form-control" id="treeName">
+                                <input type="text" required name="treeName" class="form-control" id="treeName">
+                                <label for="treecomments" class="control-label">Comments</label>
+                                <input type="text" required name="treecomments" class="form-control" id="treecomments">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button data-dismiss="modal" id="saveName" class="btn btn-primary">Save changes</button>
+                        <button type="submit" data-dismiss="modal" id="saveName" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -426,6 +434,7 @@
                     $( "#reset" ).prop( "disabled", true );
                     $('#guide').css("display","none");
                     $('#q').val("");
+                    $('#lii1').first().find('a').text('Tab 1');
                     createJStree(trees);
 
                 }
@@ -441,7 +450,7 @@
     /*------------------------Guide handling-------------------------------------*/
 
         $( "#reset" ).prop( "disabled", true );
-        $('#next').click(function(){
+        $('#next').click(function(){Fsa
             $('#step1').fadeOut(300);
             $('#step2').fadeOut(300);
             $('#step3').fadeOut(300);
@@ -481,6 +490,7 @@
                 // $('#step2').fadeOut(300);
 
             }, 5000);
+            $('.guide').css("display","none");
             Cookie = readCookie();
         });
 
@@ -529,6 +539,7 @@
 
        /* save_tree = (($('.file-viewer ul')));
         console.log(save_tree);
+
         $('.data-tree').jstree();
             $('.data-tree').appendChild(save_tree);
         //var newfile =
@@ -538,15 +549,52 @@
 
     });
     $('#saveName').click(function(){
+        var dataAraay = new Array();
+        var currentdate = new Date();
+        var datetime = "Last Sync: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+        if(($('#treecomments').val().length)==0){
+            var noname = 'no name';
+            var name ="treeName - "+noname;
+            $('#lii1').first().find('a').text(noname);//change the tab name
+        }
+        else{
+            var name ="treeName - "+$('#treeName').val();
+            $('#lii1').first().find('a').text($('#treeName').val());//change the tab name
 
-        var name ="treeName - "+$('#treeName').val();
+        }
+        var comments = 'Comments - '+ $('#treecomments').val();
+        var content = JSON.stringify($(".file-viewer").html());
+        dataAraay.push(content);
+        dataAraay.push(comments);
+        dataAraay.push(datetime);
 
-            /*-------save tree in local storage---------*/
+        /*-------save tree in local storage---------*/
+        try {
+            localStorage.setItem(name, dataAraay); //store the item in the database
+        } catch (e) {
+            if (e == QUOTA_EXCEEDED_ERR) {
+                alert("Quota exceeded!");
+            }
+        }
+       /* localStorage.setItem("arrayName", JSON.stringify(data));
+
+
             localStorage[name] = JSON.stringify($(".file-viewer").html());
+          localStorage.setItem("comments", $('#treecomments').val());*/
+
+
+
+
         $('#savechange').removeClass('glyphicon-floppy-save').addClass('glyphicon-floppy-saved');
         $( "#save" ).prop( "disabled", true );
         $('#save').blur();
-
+        $('#treeName').val('');
+        $('#treecomments').val('');
 
     });
 
@@ -657,6 +705,15 @@
         $( "#copyto" ).prop( "disabled", false );
 
         //$('.data-tree').jstree("destroy").empty();
+
+
+    });
+    /*----------------------help handling Functions-----------------------------*/
+
+    $('#help').click(function(){
+
+        $('.row').css("opacity",'0.25');
+        $('.guide').css("display","inline");
 
 
     });

@@ -27,6 +27,7 @@
 
 
             $scope.buildHeader = "Build Your Own Tree";
+            $scope.searchHeader = "Search In Your Tree"
 
             $scope.dndStart = function(data, element,helper,event){
                 alert('vv');

@@ -17,7 +17,7 @@ hr {
 }
 .tree-browser {
   background-color:#444647;
-  height: 774px;
+  height: 784px;
   overflow: auto;
   border-top:2px solid #8E9194;
   padding-top: 20px;
@@ -45,6 +45,7 @@ hr {
 }
 
 .btn-toolbar{
+  position: relative;
   padding-top: 7px;
   padding-bottom:6px;
   margin:0;
@@ -57,6 +58,12 @@ h3{
   margin-left: 68%;
   margin-top: -30px;
 }
+#searchsectionHeader{
+  position: absolute;
+  top: 30px;
+  left: 416px;
+}
+
 #logo{
   background-image: url('../imgs/logo.png');
   margin-top: 11px;
@@ -92,14 +99,26 @@ input#q{
   outline-width: thin;
   float: right;
 }
-
+#guidehelp{
+  float: right;
+}
+#help{
+  height: 34px;
+  width: 40.0156px;
+  padding-left: 9px;
+}
+.glyphicon.glyphicon-question-sign{
+  font-size: 20px;
+}
 #reset{
   display: inline-block;
   }
 .modal-dialog {
   width: 400px;
 }
-
+.form-group input{
+  margin-bottom: 10px;
+}
 
 pre{
   background-color: #EDF0F2;
