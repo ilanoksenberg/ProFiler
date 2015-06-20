@@ -138,7 +138,7 @@
             $('#create').click(function () {
                 $( "#reset" ).prop( "disabled", false );
                 $('.file-viewer').jstree("destroy").empty();
-                $('.file-preview').empty();
+                $('.tree-preview').empty();
 
                 var new_tree = $('.file-viewer').jstree({
                     'core': {

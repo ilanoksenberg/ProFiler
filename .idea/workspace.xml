@@ -47,14 +47,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/partials/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47692308" vertical-offset="7282" max-vertical-offset="12000">
-              <caret line="555" column="50" selection-start-line="555" selection-start-column="50" selection-end-line="555" selection-end-column="50" />
+            <state vertical-scroll-proportion="-3.9215686" vertical-offset="5560" max-vertical-offset="12000">
+              <caret line="437" column="13" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
               <folding>
-                <element signature="e#10867#11557#0" expanded="false" />
-                <element signature="e#11566#13015#0" expanded="false" />
+                <element signature="e#10858#11548#0" expanded="false" />
+                <element signature="e#11557#13006#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,18 +63,18 @@
       <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="8340">
+            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="8340">
               <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1893" max-vertical-offset="3180">
-              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.82662" vertical-offset="1928" max-vertical-offset="3180">
+              <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -110,8 +110,8 @@
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/server/views/index.html" />
         <option value="$PROJECT_DIR$/client/css/app.css" />
-        <option value="$PROJECT_DIR$/client/js/controllers.js" />
         <option value="$PROJECT_DIR$/client/partials/home.html" />
+        <option value="$PROJECT_DIR$/client/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -412,8 +412,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="765">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
           <folding>
-            <element signature="e#10867#11557#0" expanded="false" />
-            <element signature="e#11566#13015#0" expanded="false" />
+            <element signature="e#10858#11548#0" expanded="false" />
+            <element signature="e#11557#13006#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -467,8 +467,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="765">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
           <folding>
-            <element signature="e#10867#11557#0" expanded="false" />
-            <element signature="e#11566#13015#0" expanded="false" />
+            <element signature="e#10858#11548#0" expanded="false" />
+            <element signature="e#11557#13006#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -743,22 +743,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/client/partials/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1893" max-vertical-offset="3180">
-          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="-3.9215686" vertical-offset="5560" max-vertical-offset="12000">
+          <caret line="437" column="13" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
+          <folding>
+            <element signature="e#10858#11548#0" expanded="false" />
+            <element signature="e#11557#13006#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/home.html">
+    <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47692308" vertical-offset="7282" max-vertical-offset="12000">
-          <caret line="555" column="50" selection-start-line="555" selection-start-column="50" selection-end-line="555" selection-end-column="50" />
-          <folding>
-            <element signature="e#10867#11557#0" expanded="false" />
-            <element signature="e#11566#13015#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.82662" vertical-offset="1928" max-vertical-offset="3180">
+          <caret line="160" column="12" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
