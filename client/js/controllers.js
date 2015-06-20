@@ -138,6 +138,8 @@
             $('#create').click(function () {
                 $( "#reset" ).prop( "disabled", false );
                 $('.file-viewer').jstree("destroy").empty();
+                $('.file-preview').empty();
+
                 var new_tree = $('.file-viewer').jstree({
                     'core': {
                         "check_callback": true,

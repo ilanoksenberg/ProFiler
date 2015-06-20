@@ -43,7 +43,14 @@ hr {
   overflow: auto;
 
 }
-
+.file-preview{
+  background-color:#EDF0F2;
+  height: 720px;
+  padding-top: 62px;
+  padding-bottom: 20px;
+  border-top:2px solid #8E9194;
+  overflow: auto;
+}
 .btn-toolbar{
   position: relative;
   padding-top: 7px;

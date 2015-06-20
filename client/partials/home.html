@@ -134,7 +134,7 @@
                 </p>
 
         </div>
-        <div class="dynNav col-md-6">
+        <div class="dynNav col-md-4">
 
             <p>
                 <div id="messagesAlert2"></div>
@@ -151,6 +151,10 @@
                     <div class="tab-pane fade in active file-viewer" id="tab2"><p>Content tab 1</p></div>
                 </div>
             </p>
+
+        </div>
+        <div class="file-preview col-md-2">
+
 
         </div>
         <!-- Modal -->
@@ -174,11 +178,12 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         <button type="submit" data-dismiss="modal" id="saveName" class="btn btn-primary">Save changes</button>
+
                     </div>
                 </div>
             </div>
         </div>
-        /*----------saved trees----------*/
+        <!----------saved trees---------->
         <div class="modal fade" id="openTrees" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -427,6 +432,8 @@
             if(len===0){
                 $('#create').prop("disabled",false);
                 $('#save').prop("disabled",true);
+                $('.file-preview').empty();
+
 
             }
             else{
@@ -450,6 +457,7 @@
                 if(result) {
                     $('.file-viewer').jstree("destroy").empty();
                     $('.data-tree').jstree("destroy").empty();
+                    $('.file-preview').empty();
                     $( "#reset" ).prop( "disabled", true );
                     $('#guide').css("display","none");
                     $('#q').val("");
@@ -507,6 +515,7 @@
         $(".file-viewer").html(contentsOfOldDiv);
 
 
+
        /* save_tree = (($('.file-viewer ul')));
         console.log(save_tree);
 
@@ -519,6 +528,7 @@
 
     });
     $('#saveName').click(function(){
+
         Date.prototype.today = function () {
             return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
         }
@@ -540,10 +550,21 @@
             $('#lii1').first().find('a').text($('#treeName').val());//change the tab name
 
         }
-        var comments = 'Comments - '+ $('#treecomments').val();
+        $('.file-preview').empty();
+        if(($('#treecomments').val().length)==0) {
+            var comment = 'null';
+            $('.file-preview').append('<h4>no name</h4><h6>Created : '+datetime+'</h6><h6>Comments :</h6>');
+
+        }
+        else{
+            var comment = $('#treecomments').val();
+            $('.file-preview').append('<h4>'+$('#treeName').val()+'</h4><h6>Created : '+datetime+'</h6><h6>Comments : '+comment+'</h6>');
+
+        }
+
         var content =$(".file-viewer ul").html();
         dataAraay.push(content);
-        dataAraay.push(comments);
+        dataAraay.push(comment);
         dataAraay.push(datetime);
 
         /*-------save tree in local storage---------*/
@@ -562,12 +583,15 @@
 
 
 
-
+        $('#treeName').val('');
+        $('#treecomments').val('');
         $('#savechange').removeClass('glyphicon-floppy-save').addClass('glyphicon-floppy-saved');
         $( "#save" ).prop( "disabled", true );
         $('#save').blur();
-        $('#treeName').val('');
-        $('#treecomments').val('');
+
+
+
+
 
     });
 
@@ -604,6 +628,8 @@
          $('#open').blur();
 
         $('.file-viewer').jstree("destroy").empty();
+        $('.file-preview').empty();
+
         var trees = [".file-viewer"];
         createJStree(trees);
 
@@ -623,6 +649,8 @@
         console.log(values[0]);
         $('.file-viewer ul').append(values[0]);
         $('#lii1').first().find('a').text(name[0]);
+        $('.file-preview').append('<h4>'+name[0]+'</h4><h6>Created : '+values[2]+'</h6><h6>Comments : '+values[1]+'</h6>');
+
 
 
     });
@@ -657,6 +685,8 @@
         /*-------save tree in DB/json file---------*/
 
         $('.file-viewer ul').empty();
+        $('.file-preview').empty();
+
         $(".data-tree ul").clone().appendTo('.file-viewer');
         //$(resultsArray).appendTo('.file-viewer ul');
 
