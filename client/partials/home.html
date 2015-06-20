@@ -1,6 +1,5 @@
 <div ng-controller="HomeCtrl">
     <div class="guide">
-
         <div id="step1">
             <div id = "step1_Img"></div>
             <div id = "step1_Txt"> <h3>Working Station</h3>Here You Can Build Your Own Tree</div>
@@ -43,15 +42,15 @@
             </button>
 
         </div>
-     <!--   <div id="step7">
+        <div id="step7">
             <div id = "step7_Img"></div>
-            <div id = "step7_Txt"> You can create your root folder</div>
+            <div id = "step7_Txt"> You Can Always Get Help</div>
             <button id="next7"type="button" class="btn btn-default" aria-label="right Align">
-                Step 8
+                Done
             </button>
 
         </div>
-        <div id="step8">
+    <!--    <div id="step8">
             <div id = "step8_Img"></div>
             <div id = "step8_Txt">Drag & Drop files and folders</div>
 
@@ -59,6 +58,7 @@
 
     </div>
     <div class="toolBar">
+
       <div class="btn-toolbar" role="toolbar">
           <div class="btn-group" id="guidehelp">
               <button id="help" type="button" class="btn btn-default" aria-label="right Align" >
@@ -92,13 +92,9 @@
               </button>
           </div>
           <div class="btn-group">
-              <div class="size">
-                  <button type="button" class="btn btn-default field" name="test"  id="open" aria-label="right Align"  >
+                  <button type="button" class="btn btn-default field" name="test"  id="open" aria-label="right Align" data-toggle="modal" data-target="#openTrees" >
                       <span  class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
                     </button>
-                      <ul class="list">
-                       </ul>
-              </div>
           </div>
 
           <div class="btn-group">
@@ -110,7 +106,6 @@
       </div>
         <h3 id="buildTreeHeader">{{buildHeader}}</h3>
         <h3 id="searchsectionHeader">{{searchHeader}}</h3>
-
     </div>
 
 
@@ -183,7 +178,26 @@
                 </div>
             </div>
         </div>
+        /*----------saved trees----------*/
+        <div class="modal fade" id="openTrees" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel2">Choose Your tree</h4>
+                    </div>
+                    <div class="modal-body" id="padding-tree">
+                        <ul id="putTree">
 
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" data-dismiss="modal" id="chooseName" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
        <!-- <div class="bs-example col-md-3 ">
             <ul class="nav nav-tabs " id="myTab">
@@ -233,7 +247,7 @@
 
 </div>
 <script>
-    $(document).ready(function() {
+     $(document).ready(function() {
 
        /* jQuery(document).on("dnd_start.vakata", function (e, data) {
             console.log("here");
@@ -255,7 +269,7 @@
             debugger
         });*/
 
-        (function($){
+       /* (function($){
             $.fn.styleddropdown = function(){
                 return this.each(function(){
                     obj = $(this)
@@ -290,12 +304,17 @@
 
         $(function(){
             $('.size').styleddropdown();
-        });
+        });*/
         $('#savedtreemodal').on('shown.bs.modal', function () {
 
             $('#savedtreemodal').focus();
 
-        })
+        });
+        $('#openTrees').on('shown.bs.modal', function () {
+
+            $('#openTrees').focus();
+        });
+
 
 
 
@@ -449,58 +468,9 @@
 
     /*------------------------Guide handling-------------------------------------*/
 
-        $( "#reset" ).prop( "disabled", true );
-        $('#next').click(function(){Fsa
-            $('#step1').fadeOut(300);
-            $('#step2').fadeOut(300);
-            $('#step3').fadeOut(300);
 
-            $('#step4').css("display","inline-block");
-            setTimeout(function(){
-               // $('#step2').fadeOut(300);
 
-            }, 5000);
-            Cookie = readCookie();
-        });
 
-        $('#next4').click(function(){
-            $('#step4').fadeOut(300);
-            $('#step5').css("display","inline-block");
-            setTimeout(function(){
-                // $('#step2').fadeOut(300);
-
-            }, 5000);
-            Cookie = readCookie();
-        });
-        $('#next5').click(function(){
-            $('#step5').fadeOut(300);
-            $('#step6').css("display","inline-block");
-            setTimeout(function(){
-                // $('#step2').fadeOut(300);
-
-            }, 5000);
-            Cookie = readCookie();
-        });
-        $('#next6').click(function(){
-            $('#step6').fadeOut(300);
-            $('.row').css("opacity",'1');
-
-            //$('#step6').css("display","inline-block");
-            setTimeout(function(){
-                // $('#step2').fadeOut(300);
-
-            }, 5000);
-            $('.guide').css("display","none");
-            Cookie = readCookie();
-        });
-
-        /*$('#create').click(function(){
-            if(!(hasCookie(Cookie))) {
-                $('#step1').fadeOut(300);
-                $('#step2').css("display", "inline-block");
-            }
-            Cookie = readCookie();
-        })*/
 
 
 
@@ -549,15 +519,18 @@
 
     });
     $('#saveName').click(function(){
+        Date.prototype.today = function () {
+            return ((this.getDate() < 10)?"0":"") + this.getDate() +"/"+(((this.getMonth()+1) < 10)?"0":"") + (this.getMonth()+1) +"/"+ this.getFullYear();
+        }
+
+        // For the time now
+        Date.prototype.timeNow = function () {
+            return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+        }
+        var datetime = new Date().today() + " " + new Date().timeNow();
         var dataAraay = new Array();
-        var currentdate = new Date();
-        var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/"
-                + currentdate.getFullYear() + " @ "
-                + currentdate.getHours() + ":"
-                + currentdate.getMinutes() + ":"
-                + currentdate.getSeconds();
-        if(($('#treecomments').val().length)==0){
+
+        if(($('#treeName').val().length)==0){
             var noname = 'no name';
             var name ="treeName - "+noname;
             $('#lii1').first().find('a').text(noname);//change the tab name
@@ -568,7 +541,7 @@
 
         }
         var comments = 'Comments - '+ $('#treecomments').val();
-        var content = JSON.stringify($(".file-viewer").html());
+        var content =$(".file-viewer ul").html();
         dataAraay.push(content);
         dataAraay.push(comments);
         dataAraay.push(datetime);
@@ -604,47 +577,57 @@
         /*-------get tree from local storage---------*/
         for ( var i = 0, len = localStorage.length; i < len; ++i ) {
             console.log( localStorage.getItem( localStorage.key( i ) ) );
+
         }
 
-       $('.list').empty();
+
+        $('#putTree').empty();
 
 
-        var str = '';
-        var str = '<h3>Choose Your Tree</h3>';
-        $('.list').append(str);
         for (var key in localStorage){
-            if(key.toString().includes("treeName")){
 
-                var name = key.toString().substring(11, key.length);
-                $('.list').append('<li>'+name+'</li>');
+            if(key.toString().includes("treeName")){
+                var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
+                var values = valueFromStore.split(",");
+
+                 var name = key.toString().substring(11, key.length);
+                $('#putTree').append('<li class="get-tree" data-dismiss="modal">'+name+' - '+values[2]+'</li>');
               // str+=('<li id="get-tree">'+name+'</li>');
 
             }
             console.log(key);
         };
-        console.log(str);
 
 
 
 
          $('#open').blur();
 
+        $('.file-viewer').jstree("destroy").empty();
+        var trees = [".file-viewer"];
+        createJStree(trees);
+
+    });
+    $(document).on("click", ".get-tree", function() {
+
+
+        var name= $(this).html().split(' -');
+        for (var key in localStorage){
+            if(key.toString().substring(11, key.length)===(name[0].toString())){
+                var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
+                var values = valueFromStore.split(",");
+
+            }
+            console.log(key);
+        };
+        console.log(values[0]);
+        $('.file-viewer ul').append(values[0]);
+        $('#lii1').first().find('a').text(name[0]);
+
 
     });
 
-    $('.list li').click(function(){
-        debugger
-    });
-    $('.get-tree').click(function(){
-       debugger
-    });
-    $('.deletetree').on('click',function(){
-        console.log('delete');
-        //var temp = $(this).sibling();
-        debugger
-        localStorage.removeItem(key);
 
-    });
     /*-----------------------------------search handling-----------------------------------*/
     $("#s").submit(function (e) {
         e.preventDefault();
@@ -711,11 +694,7 @@
     /*----------------------help handling Functions-----------------------------*/
 
     $('#help').click(function(){
-
-        $('.row').css("opacity",'0.25');
-        $('.guide').css("display","inline");
-
-
+        displayGuide();
     });
     /*----------------------Cookie handling Functions-----------------------------*/
         function hasCookie(Cookie){
@@ -726,7 +705,7 @@
             }
             else {
                 createCookie('admin', 'adminCookie', 7);
-                $('.row').css("opacity",'0.25');
+                displayGuide();
                 return false;
             }
         }
@@ -769,6 +748,71 @@
 
 
     }
-/*----------------------------------------------------------------------------*/
 
+    /*------------------------display guide function-------------------------------------*/
+    function displayGuide(){
+        able(1);
+        $('.row').css("opacity",'0.25');
+        $('.guide').css("display","inline-block");
+        $('#step1').fadeIn(300);
+        $('#step2').fadeIn(300);
+        $('#step3').fadeIn(300);
+
+        $('#next').click(function(){
+            $('#step1').fadeOut(300);
+            $('#step2').fadeOut(300);
+            $('#step3').fadeOut(300);
+            $('#step4').css("display","inline-block");
+            $('#create').addClass("blinking");
+            Cookie = readCookie();
+        });
+
+        $('#next4').click(function(){
+            $('#step4').fadeOut(300);
+            $('#step5').css("display","inline-block");
+            $('#create').removeClass("blinking");
+
+            Cookie = readCookie();
+        });
+        $('#next5').click(function(){
+            $('#step5').fadeOut(300);
+            $('#step6').css("display","inline-block");
+            $('#reset').addClass("blinking");
+
+            Cookie = readCookie();
+        });
+        $('#next6').click(function(){
+            $('#step6').fadeOut(300);
+            $('#step7').css("display","inline-block");
+            $('#reset').removeClass("blinking");
+            $('#help').addClass("blinking");
+            Cookie = readCookie();
+        });
+        $('#next7').click(function(){
+            $('#step7').fadeOut(300);
+            $('#help').removeClass("blinking");
+            $('.row').css("opacity",'1');
+            $('.guide').css("display","none");
+            Cookie = readCookie();
+            able(0);
+        });
+
+    }
+/*----------------------------------------------------------------------------*/
+    function able(flag){
+        if(flag){
+            $(".toolBar").css("pointer-events","none");
+
+
+
+
+        }
+        else{
+            $(".toolBar").css("pointer-events","auto");
+
+
+        }
+
+
+    }
 </script>

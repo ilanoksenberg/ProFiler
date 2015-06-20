@@ -212,13 +212,14 @@ pre{
   margin-left: 5px;
 }
 #step1{
-  position: absolute;
+  position: relative;
   left: 900px;
+  top: 240px;
   -webkit-animation: fadein 2s;
 }
 #step1_Img{
-  position: relative;
-  top: 370px;
+  position: absolute;
+  top: 132px;
   left: 100px;
    background: url('../imgs/arrowup.png')no-repeat;
   z-index: 999;
@@ -229,7 +230,7 @@ pre{
 }
 
 #step1_Txt{
-  position: relative;
+  position: absolute;
   left: 58px;
   font-size: 20px;
   z-index: 999;
@@ -247,24 +248,26 @@ pre{
 }
 @-webkit-keyframes slideUp{
   0%   { right:100px;top:800px;}
-  100% { right:100px;top:370px;}
+  100% { right:100px;top:132px;}
 }
 #next{
-  position: relative;
+  position: absolute;
   left: 270px;
+  top:64px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 
 #step2{
-   position: absolute;
+   position: relative;
   left: 357px;
+  top: 240px;
   -webkit-animation: fadein 2s;
 }
 #step2_Img{
-  position: relative;
-  top: 370px;
+  position: absolute;
+  top: 132px;
   left: 100px;
   background: url('../imgs/arrowup.png')no-repeat;
   z-index: 999;
@@ -274,7 +277,7 @@ pre{
   animation: slideUp 2s;
 }
 #step2_Txt{
-  position: relative;
+  position: absolute;
    left: 26px;
   z-index: 999;
   height: 70px;
@@ -285,12 +288,13 @@ pre{
 }
 
 #step3{
-   position: absolute;
+   position: relative;
   -webkit-animation: fadein 2s;
+  top: 240px;
 }
 #step3_Img{
-  position: relative;
-  top: 370px;
+  position: absolute;
+  top: 132px;
   left: 100px;
   background: url('../imgs/arrowup.png')no-repeat;
   z-index: 999;
@@ -300,7 +304,7 @@ pre{
   animation: slideUp 2s;
 }
 #step3_Txt{
-  position: relative;
+  position: absolute;
   left: 26px;
   z-index: 999;
   height: 70px;
@@ -315,12 +319,12 @@ pre{
 
 #step4{
   display: none;
-  position: absolute;
+  position: relative;
   -webkit-animation: fadein 2s;
 }
 #step4_Img{
-  position: relative;
-  top: 23px;
+  position: absolute;
+  top: 12px;
   left: -12px;
   background: url('../imgs/arrowcurveup2.png')no-repeat;
   z-index: 999;
@@ -328,9 +332,9 @@ pre{
   width:202px;
 }
 #step4_Txt{
-  position: relative;
+  position: absolute;
   left: 200px;
-  top: -23px;
+  top: 108px;
   z-index: 999;
   height: 81px;
   width: 183px;
@@ -340,30 +344,31 @@ pre{
   text-shadow: 0px 0px 3px #fff;
 }
 #next4{
-  position: relative;
-  left: 268px;
+  position: absolute;
+  left: 293px;
+  top: 172px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 #step5{
    display: none;
-   position: absolute;
+   position: relative;
+   top: 74px;
+   left: 200px;
    -webkit-animation: fadein 2s;
  }
 #step5_Img{
-  position: relative;
-  top: 90px;
-  left: 170px;
+  position: absolute;
   background: url('../imgs/arrow2.png')no-repeat;
   z-index: 999;
   height: 150px;
   width:305px;
 }
 #step5_Txt{
-  position: relative;
-  left: 400px;
-  top: 93px;
+  position: absolute;
+  left: 275px;
+  top: 142px;
   z-index: 999;
   height: 81px;
   width: 283px;
@@ -373,21 +378,21 @@ pre{
   text-shadow: 0px 0px 3px #fff;
 }
 #next5{
-  position: relative;
-  left: 602px;
-  top: 53px;
+  position: absolute;
+  left: 431px;
+  top: 186px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 #step6{
   display: none;
-  position: absolute;
+  position: relative;
   left: 149px;
   -webkit-animation: fadein 2s;
 }
 #step6_Img{
-  position: relative;
+  position: absolute;
   top: 23px;
   left: -12px;
   background: url('../imgs/arrowcurveup2.png')no-repeat;
@@ -396,9 +401,9 @@ pre{
   width:202px;
 }
 #step6_Txt{
-  position: relative;
+  position: absolute;
   left: 200px;
-  top: -23px;
+  top: 140px;
   z-index: 999;
   height: 150px;
   width: 305px;
@@ -408,9 +413,43 @@ pre{
   text-shadow: 0px 0px 3px #fff;
 }
 #next6{
+  position: absolute;
+  left: 452px;
+  top: 181px;
+  z-index: 999;
+  background-color: #5890AD;
+  color: #000000;
+}
+#step7{
+  display: none;
   position: relative;
-  left: 420px;
-  bottom: 125px;
+  left: 1000px;
+  -webkit-animation: fadein 2s;
+}
+#step7_Img{
+  position: absolute;
+  top: 23px;
+  left: 203px;
+  background: url('../imgs/arrowcurveupright2.png')no-repeat;
+  z-index: 999;
+  height: 138px;
+  width:202px;
+}
+#step7_Txt{
+  position: absolute;
+  left: -45px;
+  top: 116px;
+  z-index: 999;
+  height: 150px;
+  width: 305px;
+  color: #000066;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
+}
+#next7{
+  position: absolute;
+  top:160px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
@@ -481,4 +520,25 @@ pre{
 .get-tree{
   z-index: 3224;
 
+}
+@keyframes blink {
+  50% { border-color: #0000FF; }
+}
+.blinking{ /*or other element you want*/
+  animation: blink .5s step-end infinite alternate;
+}
+#padding-tree{
+  padding-right: 50px;
+  padding-left: 50px;
+}
+#putTree > li{
+  list-style-type: none;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: justify;
+  width:100%;
+}
+#putTree>li:hover{
+  background-color: #999999;
 }
