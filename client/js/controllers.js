@@ -33,11 +33,15 @@
             /*------------------------handle node selected-------------------------------------*/
 
             $scope.nodeSelected = function (e, data) {
-               // window.open("/documents/msword_doc");
+
                 console.log("yes");
                 var treeNode = data.node;
-               // treeNode.attr("href","file://"+treeNode.id);
+                var test = $('#'+treeNode.id).attr("href");
+
+                treeNode.attr("href","file://"+treeNode.id);
+               //window.location.href("file://"+treeNode.id);
                  var _l = data.node.li_attr;
+                console.log(treeNode.id);
                 //PDFJS.getDocument('file:/'+treeNode.id);
 
                 /*------------------handle files selected---------------*/

@@ -13,8 +13,8 @@
             d = e("script:last").attr("src"),
             o = document,
             c = o.createElement("LI"),
-            l, h;
-        c.setAttribute("role", "treeitem"), l = o.createElement("I"), l.className = "jstree-icon jstree-ocl", c.appendChild(l), l = o.createElement("A"), l.className = "jstree-anchor", l.setAttribute("href", "#"), h = o.createElement("I"), h.className = "jstree-icon jstree-themeicon jstree-custom-folder jstree-themeicon-custom", l.appendChild(h), c.appendChild(l), l = h = null, e.jstree = {
+            l, h;debugger
+        c.setAttribute("role", "treeitem"), l = o.createElement("I"), l.className = "jstree-icon jstree-ocl", c.appendChild(l), l = o.createElement("A"), l.className = "jstree-anchor", l.setAttribute("href", "#"),l.setAttribute("target","_blank"), h = o.createElement("I"), h.className = "jstree-icon jstree-themeicon jstree-custom-folder jstree-themeicon-custom", l.appendChild(h), c.appendChild(l), l = h = null, e.jstree = {
             version: "3.0.3",
             defaults: {
                 plugins: []
@@ -713,6 +713,8 @@
                         if ("id" === o) continue;
                         "class" !== o ? t.setAttribute(o, r.li_attr[o]) : _ += r.li_attr[o]
                     }
+
+
                 p && "false" !== p && t.setAttribute("aria-selected", !0), r.state.loaded && !r.children.length ? _ += " jstree-leaf" : (_ += r.state.opened && r.state.loaded ? " jstree-open" : " jstree-closed", t.setAttribute("aria-expanded", r.state.opened && r.state.loaded)), null !== r.parent && g[r.parent].children[g[r.parent].children.length - 1] === r.id && (_ += " jstree-last"), t.id = r.id, t.className = _, _ = (r.state.selected ? " jstree-clicked" : "") + (r.state.disabled ? " jstree-disabled" : "");
                 for (l in r.a_attr)
                     if (r.a_attr.hasOwnProperty(l)) {
@@ -1747,16 +1749,20 @@
                 }, this)) : s
             }
         }, e.jstree.defaults.contextmenu = {
+
             select_node: !0,
             show_at_node: !0,
             items: function(t, i) {
+
                 return {
                     create: {
+
                         separator_before: !1,
                         separator_after: !0,
                         _disabled: !1,
                         label: "Create",
                         action: function(t) {
+
                             var i = e.jstree.reference(t.reference),
                                 s = i.get_node(t.reference);
                             i.create_node(s, {}, "last", function(e) {
@@ -1787,6 +1793,7 @@
                             var i = e.jstree.reference(t.reference),
                                 s = i.get_node(t.reference);
                             i.is_selected(s) ? i.delete_node(i.get_selected()) : i.delete_node(s)
+
                         }
                     },
                     ccp: {

@@ -253,7 +253,6 @@
 </div>
 <script>
      $(document).ready(function() {
-
        /* jQuery(document).on("dnd_start.vakata", function (e, data) {
             console.log("here");
             var xhr = ("XMLHttpRequest" in window) ? new XMLHttpRequest() : new ActiveXObject("Msxml3.XMLHTTP");
@@ -388,11 +387,11 @@
         $('.tree-browser').bind("DOMSubtreeModified",function(){
            // $('li').removeClass('jstree-closed').addClass('jstree-open');
 
-
            // $('ul').children().find('.jstree-children').hide();
            // $('li').attr("aria-expanded","true");
            // $('.jstree-open').removeClass('jstree-open').addClass('jstree-close');
            // $('li').attr("aria-expanded","false");
+            pdfHandle();
 
 
             if(($('.jstree-container-ul').height())>'720'){
@@ -416,7 +415,9 @@
 
          $('.data-tree').bind("DOMSubtreeModified",function(){
             var len = $('.data-tree li').length;
-            if(len===0){
+             pdfHandle();
+
+             if(len===0){
                 $('#submit').prop("disabled",true);
                 $( "#buildTree" ).prop( "disabled", true );
                 $( "#copyto" ).prop( "disabled", true );
@@ -429,6 +430,7 @@
 
         $('.file-viewer').bind("DOMSubtreeModified",function(){
             var len = $('.file-viewer li').length;
+            pdfHandle();
             if(len===0){
                 $('#create').prop("disabled",false);
                 $('#save').prop("disabled",true);
@@ -450,7 +452,16 @@
                 localStorage["state2"] = JSON.stringify($('.file-viewer').html());
             });
         });
+    function pdfHandle(){
+        $('li > a').each(function(){
 
+            if($(this).parent().attr("filetype")==='pdf')
+            {
+
+                $(this).attr("href",'file://'+$(this).parent().attr("base"));
+            }
+        });
+    }
     /*------------------------Reset button-------------------------------------*/
         $('#reset').click(function() {
             bootbox.confirm("Are you sure want to reset?", function(result) {
@@ -466,6 +477,7 @@
 
                 }
             });
+
         });
 
 
@@ -539,7 +551,26 @@
         }
         var datetime = new Date().today() + " " + new Date().timeNow();
         var dataAraay = new Array();
+        var lastModified = '';
+        var created = '';
+        for (var key in localStorage){
+            if(key.toString().substring(11, key.length)===$('#treeName').val()){
+                var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
+                var values = valueFromStore.split(",");
+                created = values[2];
+                lastModified = values[3];
 
+
+            }
+         };
+debugger
+        if(lastModified.length>0){
+            lastModified = datetime;
+        }
+        else{
+            created = datetime;
+            lastModified = datetime;
+        }
         if(($('#treeName').val().length)==0){
             var noname = 'no name';
             var name ="treeName - "+noname;
@@ -553,19 +584,21 @@
         $('.tree-preview').empty();
         if(($('#treecomments').val().length)==0) {
             var comment = 'null';
-            $('.tree-preview').append('<h4>no name</h4><h6>Created : '+datetime+'</h6><h6>Comments :</h6>');
+            $('.tree-preview').append('<h4>'+$('#treeName').val()+'</h4><h6>Last Modified : '+lastModified+'</h6><h6>Created : '+created+'</h6><h6>Comments : '+comment+'</h6>');
 
         }
         else{
             var comment = $('#treecomments').val();
-            $('.tree-preview').append('<h4>'+$('#treeName').val()+'</h4><h6>Created : '+datetime+'</h6><h6>Comments : '+comment+'</h6>');
+            $('.tree-preview').append('<h4>'+$('#treeName').val()+'</h4><h6>Last Modified : '+lastModified+'</h6><h6>Created : '+created+'</h6><h6>Comments : '+comment+'</h6>');
 
         }
+
 
         var content =$(".file-viewer ul").html();
         dataAraay.push(content);
         dataAraay.push(comment);
-        dataAraay.push(datetime);
+        dataAraay.push(created);
+        dataAraay.push(lastModified);
 
         /*-------save tree in local storage---------*/
         try {
@@ -649,7 +682,7 @@
         console.log(values[0]);
         $('.file-viewer ul').append(values[0]);
         $('#lii1').first().find('a').text(name[0]);
-        $('.tree-preview').append('<h4>'+name[0]+'</h4><h6>Created : '+values[2]+'</h6><h6>Comments : '+values[1]+'</h6>');
+        $('.tree-preview').append('<h4>'+name[0]+'</h4><h6>Last Modified : '+values[3]+'</h6><h6>Created : '+values[2]+'</h6><h6>Comments : '+values[1]+'</h6>');
 
 
 
