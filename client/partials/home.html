@@ -457,7 +457,8 @@
 
             if($(this).parent().attr("filetype")==='pdf')
             {
-
+                $(this).attr("target","_blank");
+                $(this).removeClass('disabled');
                 $(this).attr("href",'file://'+$(this).parent().attr("base"));
             }
         });

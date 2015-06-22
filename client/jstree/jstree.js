@@ -13,8 +13,8 @@
             d = e("script:last").attr("src"),
             o = document,
             c = o.createElement("LI"),
-            l, h;debugger
-        c.setAttribute("role", "treeitem"), l = o.createElement("I"), l.className = "jstree-icon jstree-ocl", c.appendChild(l), l = o.createElement("A"), l.className = "jstree-anchor", l.setAttribute("href", "#"),l.setAttribute("target","_blank"), h = o.createElement("I"), h.className = "jstree-icon jstree-themeicon jstree-custom-folder jstree-themeicon-custom", l.appendChild(h), c.appendChild(l), l = h = null, e.jstree = {
+            l, h;
+        c.setAttribute("role", "treeitem"), l = o.createElement("I"), l.className = "jstree-icon jstree-ocl", c.appendChild(l), l = o.createElement("A"), l.className = "jstree-anchor disabled", l.setAttribute("href", "#"), h = o.createElement("I"), h.className = "jstree-icon jstree-themeicon jstree-custom-folder jstree-themeicon-custom", l.appendChild(h), c.appendChild(l), l = h = null, e.jstree = {
             version: "3.0.3",
             defaults: {
                 plugins: []
@@ -140,8 +140,18 @@
                 }).on("click.jstree", ".jstree-ocl", e.proxy(function(e) {
                     this.toggle_node(e.target)
                 }, this)).on("click.jstree", ".jstree-anchor", e.proxy(function(t) {
+
+                     /*if(t.toElement.textContent.includes('pdf')){
+                        console.log('pdf');
+
+                    }
+                    else{
+                         //t.preventDefault();
+                     }*/
+
                     t.preventDefault(), e(t.currentTarget).focus(), this.activate_node(t.currentTarget, t)
                 }, this)).on("keydown.jstree", ".jstree-anchor", e.proxy(function(t) {
+                    debugger
                     if ("INPUT" === t.target.tagName) return !0;
                     var i = null;
                     switch (t.which) {
@@ -1988,6 +1998,7 @@
                             }
                         }(this), e.vakata.context.settings.hide_onmouseleave))
                     }).on("click", "a", function(t) {
+                        debugger
                         t.preventDefault(), e(this).blur().parent().hasClass("vakata-context-disabled") || e.vakata.context._execute(e(this).attr("rel")) === !1 || e.vakata.context.hide()
                     }).on("keydown", "a", function(t) {
                         var i = null;
@@ -2014,6 +2025,7 @@
                             default:
                         }
                     }).on("keydown", function(e) {
+                        debugger
                         e.preventDefault();
                         var t = s.element.find(".vakata-contextmenu-shortcut-" + e.which).parent();
                         t.parent().not(".vakata-context-disabled") && t.mouseup()

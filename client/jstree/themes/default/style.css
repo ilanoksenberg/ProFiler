@@ -982,8 +982,8 @@
   margin-left: 0;
   margin-right: 0;
 }
-
-.jstree-anchor2{
+/*
+.jstree-anchor2 {
   text-decoration: none;
   color :inherit;
 }
@@ -998,4 +998,4 @@
 a:visited { text-decoration: none; color:inherit; }
 a:hover { text-decoration: none; color:inherit; }
 a:focus { text-decoration: none; color:inherit; }
-a:hover, a:active { text-decoration: none; color:inherit }
+a:hover, a:active { text-decoration: none; color:inherit }*/
