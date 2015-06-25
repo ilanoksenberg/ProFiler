@@ -66,7 +66,7 @@
               </button>
           </div>
           <form id="s">
-              <div class="btn-group" id="copytoRight">
+              <!--<div class="btn-group" id="copytoRight">
                   <button type="button" id="copyto" class="btn btn-default" aria-label="left Align">
                       <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
                   </button>
@@ -75,7 +75,7 @@
                   <button type="button" id="buildTree" class="btn btn-default" aria-label="left Align">
                       <span class="glyphicon glyphicon-buildTree" aria-hidden="true"></span>
                   </button>
-              </div>
+              </div>-->
               <button type="submit" id="submit" class="btn btn-default"  aria-label="left Align">Search</button>
               <input type="search" class="ng-tree-search" placeholder="Search" id="q" />
 
@@ -368,14 +368,14 @@
         return false;
     }
 
-       /* $("#myTab a").click(function(e){
+       $("#myTab a").click(function(e){
             e.preventDefault();
             $(this).tab('show');
         });
         $("#myTab2 a").click(function(e){
             e.preventDefault();
             $(this).tab('show');
-        });*/
+        });
         var trees = [".data-tree",".file-viewer"];
 
 
@@ -457,12 +457,14 @@
 
             if($(this).parent().attr("filetype")==='pdf')
             {
-                $(this).attr("target","_blank");
-                $(this).removeClass('disabled');
+                //$(this).attr("target","_blank");
+               // $(this).removeClass('disabled');
                 $(this).attr("href",'file://'+$(this).parent().attr("base"));
             }
         });
     }
+
+
     /*------------------------Reset button-------------------------------------*/
         $('#reset').click(function() {
             bootbox.confirm("Are you sure want to reset?", function(result) {
@@ -862,6 +864,9 @@ debugger
         });
 
     }
+     $('#myTab,#myTab2').click(function(e){
+         e.preventDefault();
+     });
 /*----------------------------------------------------------------------------*/
     function able(flag){
         if(flag){

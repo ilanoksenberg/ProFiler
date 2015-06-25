@@ -68,7 +68,7 @@ h3{
 #searchsectionHeader{
   position: absolute;
   top: 30px;
-  left: 416px;
+  left: 436px;
 }
 
 #logo{
@@ -98,7 +98,7 @@ input#q{
 }
 #s{
   display: inline-block;
-  margin-left: 139px;
+  margin-left: 12%;
 }
 #submit{
   display: inline-block;
@@ -548,4 +548,7 @@ pre{
 }
 #putTree>li:hover{
   background-color: #999999;
+}
+.jstree-anchor2{
+
 }
