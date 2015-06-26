@@ -2063,6 +2063,9 @@
                 n = e('<div id="jstree-marker">&#160;</div>').hide().appendTo("body");
             e(document).bind("dnd_start.vakata", function(e, t) {
                 i = !1
+                console.log(e);
+                console.log(t);
+
             }).bind("dnd_move.vakata", function(a, d) {
                 if (r && clearTimeout(r), d && d.data && d.data.jstree && (!d.event.target.id || "jstree-marker" !== d.event.target.id)) {
                     var o = e.jstree.reference(d.event.target),

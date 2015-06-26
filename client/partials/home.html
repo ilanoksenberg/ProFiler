@@ -370,11 +370,11 @@
 
        $("#myTab a").click(function(e){
             e.preventDefault();
-            $(this).tab('show');
+            //$(this).tab('show');
         });
         $("#myTab2 a").click(function(e){
             e.preventDefault();
-            $(this).tab('show');
+           // $(this).tab('show');
         });
         var trees = [".data-tree",".file-viewer"];
 
@@ -434,7 +434,7 @@
             if(len===0){
                 $('#create').prop("disabled",false);
                 $('#save').prop("disabled",true);
-                $('.tree-preview').empty();
+                //$('.tree-preview').empty();
 
 
             }
@@ -523,8 +523,8 @@
 
     /*------------------------save button-------------------------------------*/
 
-    $('#save').click(function(){
-        /*-------save tree in DB/json file---------*/
+   /* $('#save').click(function(){
+        /*-------save tree in DB/json file---------
 
         var contentsOfOldDiv = JSON.parse(localStorage["Key"]);
         $(".file-viewer").html(contentsOfOldDiv);
@@ -537,11 +537,11 @@
         $('.data-tree').jstree();
             $('.data-tree').appendChild(save_tree);
         //var newfile =
-        */
 
 
 
-    });
+
+    });*/
     $('#saveName').click(function(){
 
         Date.prototype.today = function () {
@@ -566,7 +566,7 @@
 
             }
          };
-debugger
+
         if(lastModified.length>0){
             lastModified = datetime;
         }
@@ -598,24 +598,23 @@ debugger
 
 
         var content =$(".file-viewer ul").html();
+        console.log(content);
+        debugger
         dataAraay.push(content);
         dataAraay.push(comment);
         dataAraay.push(created);
         dataAraay.push(lastModified);
+        console.log(dataAraay);
 
         /*-------save tree in local storage---------*/
         try {
-            localStorage.setItem(name, dataAraay); //store the item in the database
+            localStorage.setItem(name,(dataAraay)); //store the item in the database
         } catch (e) {
             if (e == QUOTA_EXCEEDED_ERR) {
                 alert("Quota exceeded!");
             }
         }
-       /* localStorage.setItem("arrayName", JSON.stringify(data));
 
-
-            localStorage[name] = JSON.stringify($(".file-viewer").html());
-          localStorage.setItem("comments", $('#treecomments').val());*/
 
 
 
@@ -635,10 +634,7 @@ debugger
 
     $('#open').click(function(){
         /*-------get tree from local storage---------*/
-        for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-            console.log( localStorage.getItem( localStorage.key( i ) ) );
 
-        }
 
 
         $('#putTree').empty();
@@ -655,7 +651,7 @@ debugger
               // str+=('<li id="get-tree">'+name+'</li>');
 
             }
-            console.log(key);
+            //console.log(key);
         };
 
 
@@ -663,11 +659,12 @@ debugger
 
          $('#open').blur();
 
-        $('.file-viewer').jstree("destroy").empty();
-        $('.tree-preview').empty();
 
+        $('.file-viewer').empty();
+        $('.file-viewer').jstree('destroy').empty();
+        $('.tree-preview').empty();
         var trees = [".file-viewer"];
-        createJStree(trees);
+        //createJStree(trees);
 
     });
     $(document).on("click", ".get-tree", function() {
@@ -680,10 +677,16 @@ debugger
                 var values = valueFromStore.split(",");
 
             }
-            console.log(key);
+            //console.log(key);
         };
-        console.log(values[0]);
-        $('.file-viewer ul').append(values[0]);
+
+
+
+       // console.log(values[0]);
+
+
+
+        reCreateSavedTree(values[0]);
         $('#lii1').first().find('a').text(name[0]);
         $('.tree-preview').append('<h4>'+name[0]+'</h4><h6>Last Modified : '+values[3]+'</h6><h6>Created : '+values[2]+'</h6><h6>Comments : '+values[1]+'</h6>');
 
@@ -791,6 +794,119 @@ debugger
 
 
     /*------------------------Create Jstree objects-------------------------------------*/
+    function reCreateSavedTree(values){
+        var arr=[6];
+        var testobj=[
+            { "id" : "ajson1", "parent" : "#", "text" : "Simple root node" },
+            { "id" : "ajson2", "parent" : "#", "text" : "Root node 2" },
+            { "id" : "ajson3", "parent" : "ajson2", "text" : "Child 1", "icon": "jstree-custom-file" },
+            { "id" : "ajson4", "parent" : "ajson2", "text" : "Child 2","icon": "jstree-custom-file-pdf"  },
+            { "id" : "ajson5", "parent" : "#", "text" : "Root node 2" },
+            { "id" : "ajson6", "parent" : "ajson5", "text" : "Child 2","icon": "jstree-custom-file-pdf"  },
+            { "id" : "ajson7", "parent" : "ajson6", "text" : "Child 2","icon": "jstree-custom-file-pdf"  },
+            ];
+        arr[0]={ "id" : "ajson1", "parent" : "#", "text" : "Simple root node" };
+        arr[1]={ "id" : "ajson2", "parent" : "#", "text" : "Simple root node" };
+        var obj = parsing(values);
+        console.log(arr);
+        console.log(obj);
+
+        debugger
+
+        var new_tree = $('.file-viewer').jstree({
+            'core': {
+                "check_callback": true,
+                'data' : obj
+
+
+
+
+            },
+            "plugins": [
+                "contextmenu", "dnd", "search",
+                "state", "types", "wholerow"
+            ],
+            rules: {
+                multitree: true,
+                draggable: "all",
+                drag_copy: false
+
+            }
+
+        });
+
+     };
+     /*----------------------------------------------------------------------------*/
+     function parsing(value){
+
+        var test =value.toString().split('treeitem');
+         test.splice(0,1);
+         var treearray = [];
+          //console.log(test);
+         //console.log(test);
+var j=0;
+         test.forEach(function(val){
+            var parent='#';
+             var id = '#';
+             var base = '#';
+             var text  = 'New node';
+             var icon = 'jstree-custom-folder';
+             var filetype = 'folder';
+             var index = val.split('"');
+             console.log(index);
+                for(var i=0 ; i<index.length;i++){
+                   switch (index[i].toString()){
+                       case ' parent=' :
+                               if(j !=0){
+                                   //parent = index[i+1];
+                                   treearray.forEach(function(entry){
+                                        console.log(entry.base);
+                                        console.log(index[i+1]);
+
+                                       if(entry.base==index[i+1]){
+
+                                           parent=entry.id;
+                                       }
+                                   })
+
+
+                               }
+                           break;
+                       case ' id=':
+                               id = index[i+1];
+                           break;
+                       case ' filetype=':
+                               filetype = index[i+1];
+                               if(filetype ==='folder'){
+                                   icon = "jstree-custom-folder";
+                               }
+                               else if(filetype){
+                                   icon="jstree-custom-file-"+filetype;
+                               }
+                               else{
+                                   icon="jstree-custom-file";
+
+                               }
+
+                           break;
+                       case ' base=':
+                               base = index[i+1];
+                               var temp = index[i+1].split('/');
+                               text = temp[temp.length-1];
+                           break;
+                       default :
+                           break;
+                   }
+                }
+             treearray[j++]= ({"id" : id ,"parent" : parent,"text" : text,"icon":icon,"filetype": filetype,"base" : base});
+
+
+         });
+        console.log(treearray);
+             return treearray;
+
+     };
+     /*----------------------------------------------------------------------------*/
 
     function createJStree(trees){
         trees.forEach(function(value){
@@ -813,9 +929,10 @@ debugger
         return true;
 
 
-    }
+    };
 
-    /*------------------------display guide function-------------------------------------*/
+
+     /*------------------------display guide function-------------------------------------*/
     function displayGuide(){
         able(1);
         $('.row').css("opacity",'0.25');
@@ -867,7 +984,9 @@ debugger
      $('#myTab,#myTab2').click(function(e){
          e.preventDefault();
      });
-/*----------------------------------------------------------------------------*/
+
+
+     /*----------------------------------------------------------------------------*/
     function able(flag){
         if(flag){
             $(".toolBar").css("pointer-events","none");

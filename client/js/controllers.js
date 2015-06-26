@@ -155,6 +155,12 @@
                                 'state': {
                                     'opened': false,
                                     'selected': true
+                                },
+                                "li_attr": {
+                                    "parent": '#',
+                                    "fileType": 'folder',
+                                    "base": '#',
+                                    "isLeaf": true
                                 }
 
                             }
