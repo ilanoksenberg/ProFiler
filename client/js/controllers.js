@@ -160,7 +160,7 @@
                                     "parent": '#',
                                     "fileType": 'folder',
                                     "base": '#',
-                                    "isLeaf": true
+                                    "isLeaf": false
                                 }
 
                             }

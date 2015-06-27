@@ -129,7 +129,9 @@
                 }), this.element = null
             },
             bind: function() {
+
                 this.element.on("dblclick.jstree", function() {
+
                     if (document.selection && document.selection.empty) document.selection.empty();
                     else if (window.getSelection) {
                         var e = window.getSelection();
@@ -138,6 +140,7 @@
                         } catch (t) {}
                     }
                 }).on("click.jstree", ".jstree-ocl", e.proxy(function(e) {
+
                     this.toggle_node(e.target)
                 }, this)).on("click.jstree", ".jstree-anchor", e.proxy(function(t) {
 
@@ -1771,6 +1774,9 @@
                         _disabled: !1,
                         label: "Create",
                         action: function(t) {
+
+                            var temp = t.reference.parent();
+                            console.log(temp[0]);
 
                             var i = e.jstree.reference(t.reference),
                                 s = i.get_node(t.reference);

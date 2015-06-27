@@ -122,14 +122,12 @@
                 <!-- Nav tabs from Bootstrap 3 -->
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
                     <li id="li1" class="active"><a href="#" role="tab" data-toggle="tab">Tab 1</a></li>
-                    <li id="li2" class=""><a href="#" role="tab" data-toggle="tab">Tab 2</a></li>
-
                     <li id="last"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
                 </ul>
 
                     <!-- Tab panes from Bootstrap 3 -->
                 <div class="tab-content">
-                    <div class="tab-pane fade in active data-tree" tree-ajax="/api/tree" id="tab1"><p>Content tab 1</p></div>
+                    <div class="tab-pane fade in active data-tree" id="tab1"><p>Content tab 1</p></div>
                 </div>
                 </p>
 
@@ -141,10 +139,8 @@
 
                 <!-- Nav tabs from Bootstrap 3 -->
                 <ul id="myTab2" class="nav nav-tabs" role="tablist">
-                    <li id="lii1" class="active"><a href="#tab" role="tab" data-toggle="tab">Tab 1</a></li>
-                    <li id="lii2" class=""><a href="#tab" role="tab" data-toggle="tab">Tab 2</a></li>
-
-                    <li id="last2"><a href="#AddTab"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
+                    <li id="lii1" class="active"><a href="#" role="tab" data-toggle="tab">Tab 1</a></li>
+                    <li id="last2"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
                 </ul>
                     <!-- Tab panes from Bootstrap 3 -->
                 <div class="tab-content">
@@ -204,111 +200,97 @@
             </div>
         </div>
 
-       <!-- <div class="bs-example col-md-3 ">
-            <ul class="nav nav-tabs " id="myTab">
-                <li class="active"><a href="#sectionA">Tab 1</a></li>
-                <li><a href="#sectionB">+</a></li>
-            </ul>
-            <div class="tab-content ">
-                <div id="sectionA" class="tab-pane fade in active">
-                    <div class=" data-tree "  >
-                        <js-tree id-="alltree" tree-ajax="/api/tree"></js-tree>
-
-
-                    </div>
-                </div>
-                <div id="sectionB" class="tab-pane fade">
-                    <div class="data-tree">
-
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="bs-example col-md-6 ">
-            <ul class="nav nav-tabs " id="myTab2">
-                <li class="active"><a href="#sectionA">Tab 1</a></li>
-                <li><a href="#sectionB">+</a></li>
-            </ul>
-            <div class="tab-content ">
-                <div id="sectionC" class="tab-pane fade in active">
-                    <div class="file-viewer">
-                        <pre><code>{{fileViewer}}</code></pre>
-                    </div>
-                </div>
-                <div id="sectionD" class="tab-pane fade">
-                    <div class=" file-viewer">
-                        <pre><code>{{fileViewer}}</code></pre>
-                    </div>
-                </div>
-
-            </div>
-        </div>-->
 
 
     </div>
 
 </div>
 <script>
+    $(function () {
+
+        $('#myTab li[id=last]').on('click', function () { // Click event on the "Add Tab" button
+            console.log('last');
+            var nbrLiElem = ($('ul#myTab li').length) - 1; // Count how many <li> there are (minus 1 because one <li> is the "Add Tab" button)
+            console.log(nbrLiElem);
+            // Add a <li></li> line before the last-child
+            // Including the complete structure: the li ID, the <a href=""></a> etc... check the Bootstrap togglable tabs structure
+            $('ul#myTab li:last-child').before('<li id="li' + (nbrLiElem + 1) + '"><a href="#' + (nbrLiElem + 1) + '" role="tab" data-toggle="tab">Tab ' + (nbrLiElem + 1) + ' <button type="button"  onclick="removeTab(' + (nbrLiElem + 1) + ')"><span class="glyphicon glyphicon-remove"></span></button></a>');
+
+            // Add a <div></div> markup after the last-child of the <div class="tab-content">
+            //$('div.tab-content div:last-child').after('<div class="tab-pane fade data-tree'+(nbrLiElem + 1)+'" id="tab' + (nbrLiElem + 1) + '"><p>Content tab ' + (nbrLiElem + 1) + '</p></div>');
+            nbrLiElem = nbrLiElem + 1; // 1 more element in the tab system
+            //var trees = [".data-tree2"];
+
+
+            //createJStree(trees);
+           // $('#displayElem').html(nbrLiElem); // This line is not required (I just display, inside the <div id="messagesAlert"></div> markup, how many tabs there is)
+        });
+        $('#myTab2 li[id=last2]').on('click', function () { // Click event on the "Add Tab" button
+            console.log('last');
+            var nbrLiElem = ($('ul#myTab2 li').length) - 1; // Count how many <li> there are (minus 1 because one <li> is the "Add Tab" button)
+            console.log(nbrLiElem);
+            // Add a <li></li> line before the last-child
+            // Including the complete structure: the li ID, the <a href=""></a> etc... check the Bootstrap togglable tabs structure
+            $('ul#myTab2 li:last-child').before('<li id="lii' + (nbrLiElem + 1) + '"><a href="#' + (nbrLiElem + 1) + '" role="tab" data-toggle="tab">Tab ' + (nbrLiElem + 1) + ' <button type="button" onclick="removeTab(' + (nbrLiElem + 1+10) + ')"><span class="glyphicon glyphicon-remove"></span></button></a>');
+
+            // Add a <div></div> markup after the last-child of the <div class="tab-content">
+            //$('div.tab-content div:last-child').after('<div class="tab-pane fade file-viewer'+(nbrLiElem + 1)+'" id="tab' + (nbrLiElem + 1) + '"><p>Content tab ' + (nbrLiElem + 1) + '</p></div>');
+            nbrLiElem = nbrLiElem + 1; // 1 more element in the tab system
+           // var trees = [".file-viewer2"];
+
+
+            //createJStree(trees);
+           // $('#displayElem').html(nbrLiElem); // This line is not required (I just display, inside the <div id="messagesAlert"></div> markup, how many tabs there is)
+        });
+    });
+
+    function removeTab(liElem) {
+         // Function remove tab with the <li> number
+        // Display "Are you sure message" and wait for you to press "Ok"
+        if(liElem<10) {
+            $('ul#myTab > li#li' + liElem).fadeOut(500, function () {
+
+                $(this).remove(); // Remove the <li></li> with a fadeout effect
+                $('#messagesAlert').text(''); // Empty the <div id="messagesAlert"></div>
+            });
+        }
+        else {
+
+            $('ul#myTab2 > li#lii' + (liElem-10)).fadeOut(500, function () {
+
+                $(this).remove(); // Remove the <li></li> with a fadeout effect
+                $('#messagesAlert').text(''); // Empty the <div id="messagesAlert"></div>
+            });
+        }
+
+           // $('div.tab-content div#tab' + liElem).remove(); // Also remove the correct <div> inside <div class="tab-content">
+
+          /*  $('ul#myTab > li').not('#last').not('#li' + liElem).each(function(i){ // Select all <li> from <ul id="myTab"> except the last (with is the "Add Tab" button) and without the one we deleted
+                var getAttr = $(this).attr('id').split('li'); // We get the <li> div attribute
+                $('ul#myTab li#li' + getAttr[1]).attr('id', 'li' + (i + 1)); // We change the div attribute of all <li>: the first is 1, then 2, then 3...
+
+                var tabContent = 'Tab ' + (i + 1); //
+                if (getAttr[1] != 1) tabContent += ' <button type="button" class="btn btn-warning btn-xs" onclick="removeTab(' + (i + 1) + ');"><span class="glyphicon glyphicon-remove"></span></button>';
+                $('#myTab a[href="#tab' + getAttr[1] + '"]').html(tabContent) // tabContent variable, inside the <li>. We change the number also, 1, then 2, then3...
+                        .attr('href', '#tab' + (i + 1)); // Same for the href attribute
+
+                $('div.tab-content div#tab' + getAttr[1]).html() // We do the same for all <div> from <div class="tab-content">: we change the number: 1, then 2, then 3...
+                        .attr('id', 'tab' + (i + 1)); // Same for the id attribute
+
+                //$('#displayElem').html(i+1); // This line is not required (I just display, inside the <div id="messagesAlert"></div> markup, how many tabs there is)
+            });*/
+
+           // $('#messagesAlert').html('<div class="alert alert-danger" id="alertFadeOut">This tab has been deleted!</div>'); // Message saying that the tab has been deleted
+
+        return false;
+    }
      $(document).ready(function() {
        /* jQuery(document).on("dnd_start.vakata", function (e, data) {
             console.log("here");
-            var xhr = ("XMLHttpRequest" in window) ? new XMLHttpRequest() : new ActiveXObject("Msxml3.XMLHTTP");
 
-
-            var treeNode = data.element.getAttribute("id");
-            //var _l = data.node.li_attr;
-            xhr.open("GET", 'api/tree?id='+treeNode, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4)  {
-                    var serverResponse = xhr.responseText;
-                }
-            };
-            xhr.send(null);
-            console.log(xhr);
-             console.log(treeNode);
-
-            debugger
         });*/
 
-       /* (function($){
-            $.fn.styleddropdown = function(){
-                return this.each(function(){
-                    obj = $(this)
-                    obj.find('.field').click(function() { //onclick event, 'list' fadein
-                        obj.find('.list').fadeIn(400);
 
-                        $(document).keyup(function(event) { //keypress event, fadeout on 'escape'
-                            if(event.keyCode == 27) {
-                                obj.find('.list').fadeOut(400);
-                            }
-                        });
-
-                        obj.find('.list').hover(function(){ },
-                                function(){
-                                    $(this).fadeOut(400);
-                                });
-                    });
-
-                    obj.find('.list li').click(function() {
-                     debugger//onclick event, change field value with selected 'list' item and fadeout 'list'
-                        obj.find('.field')
-                                .val($(this).html())
-                                .css({
-                                    'background':'#fff',
-                                    'color':'#333'
-                                });
-                        obj.find('.list').fadeOut(400);
-                    });
-                });
-            };
-        })(jQuery);
-
-        $(function(){
-            $('.size').styleddropdown();
-        });*/
         $('#savedtreemodal').on('shown.bs.modal', function () {
 
             $('#savedtreemodal').focus();
@@ -321,65 +303,10 @@
 
 
 
-
-        $(function () {
-
-        $('#myTab li[id=last]').on('click', function () { // Click event on the "Add Tab" button
-            console.log('last');
-            var nbrLiElem = ($('ul#myTab li').length) - 1; // Count how many <li> there are (minus 1 because one <li> is the "Add Tab" button)
-            console.log(nbrLiElem);
-            // Add a <li></li> line before the last-child
-            // Including the complete structure: the li ID, the <a href=""></a> etc... check the Bootstrap togglable tabs structure
-            $('ul#myTab li:last-child').before('<li id="li' + (nbrLiElem + 1) + '"><a href="#tab' + (nbrLiElem + 1) + '" role="tab" data-toggle="tab">Tab ' + (nbrLiElem + 1) + ' <button type="button" class="btn btn-warning btn-xs" onclick="removeTab(' + (nbrLiElem + 1) + ');"><span class="glyphicon glyphicon-remove"></span></button></a>');
-
-            // Add a <div></div> markup after the last-child of the <div class="tab-content">
-            $('div.tab-content div:last-child').after('<div class="tab-pane fade data-tree" id="tab' + (nbrLiElem + 1) + '"><p>Content tab ' + (nbrLiElem + 1) + '</p></div>');
-            nbrLiElem = nbrLiElem + 1; // 1 more element in the tab system
-            $('#displayElem').html(nbrLiElem); // This line is not required (I just display, inside the <div id="messagesAlert"></div> markup, how many tabs there is)
-        });
-    });
-
-    function removeTab(liElem) { // Function remove tab with the <li> number
-        if (confirm("Are you sure?")) { // Display "Are you sure message" and wait for you to press "Ok"
-            $('ul#myTab > li#li' + liElem).fadeOut(1000, function () {
-                $(this).remove(); // Remove the <li></li> with a fadeout effect
-                $('#messagesAlert').text(''); // Empty the <div id="messagesAlert"></div>
-            });
-
-            $('div.tab-content div#tab' + liElem).remove(); // Also remove the correct <div> inside <div class="tab-content">
-
-            $('ul#myTab > li').not('#last').not('#li' + liElem).each(function(i){ // Select all <li> from <ul id="myTab"> except the last (with is the "Add Tab" button) and without the one we deleted
-                var getAttr = $(this).attr('id').split('li'); // We get the <li> div attribute
-                $('ul#myTab li#li' + getAttr[1]).attr('id', 'li' + (i + 1)); // We change the div attribute of all <li>: the first is 1, then 2, then 3...
-
-                var tabContent = 'Tab ' + (i + 1); //
-                if (getAttr[1] != 1) tabContent += ' <button type="button" class="btn btn-warning btn-xs" onclick="removeTab(' + (i + 1) + ');"><span class="glyphicon glyphicon-remove"></span></button>';
-                $('#myTab a[href="#tab' + getAttr[1] + '"]').html(tabContent) // tabContent variable, inside the <li>. We change the number also, 1, then 2, then3...
-                        .attr('href', '#tab' + (i + 1)); // Same for the href attribute
-
-                $('div.tab-content div#tab' + getAttr[1]).html('<p>Content tab ' + (i + 1) + '</p>') // We do the same for all <div> from <div class="tab-content">: we change the number: 1, then 2, then 3...
-                        .attr('id', 'tab' + (i + 1)); // Same for the id attribute
-
-                $('#displayElem').html(i+1); // This line is not required (I just display, inside the <div id="messagesAlert"></div> markup, how many tabs there is)
-            });
-
-            $('#messagesAlert').html('<div class="alert alert-danger" id="alertFadeOut">This tab has been deleted!</div>'); // Message saying that the tab has been deleted
-        }
-        return false;
-    }
-
-       $("#myTab a").click(function(e){
-            e.preventDefault();
-            //$(this).tab('show');
-        });
-        $("#myTab2 a").click(function(e){
-            e.preventDefault();
-           // $(this).tab('show');
-        });
         var trees = [".data-tree",".file-viewer"];
 
 
-        createJStree(trees);
+        //createJStree(trees);
 
 
          /*------------------------------handling changes-----------------------*/
@@ -416,6 +343,9 @@
          $('.data-tree').bind("DOMSubtreeModified",function(){
             var len = $('.data-tree li').length;
              pdfHandle();
+             /*-----------save state--------------*/
+
+             localStorage["state"] = $(".data-tree ul").html();
 
              if(len===0){
                 $('#submit').prop("disabled",true);
@@ -430,6 +360,9 @@
 
         $('.file-viewer').bind("DOMSubtreeModified",function(){
             var len = $('.file-viewer li').length;
+            /*-----------save state--------------*/
+            localStorage["state2"] = $('.file-viewer ul').html();
+
             pdfHandle();
             if(len===0){
                 $('#create').prop("disabled",false);
@@ -447,17 +380,13 @@
 
             /*------------------------set local storage-------------------------------------*/
 
-            $(function() {
-                localStorage["state"] = JSON.stringify($(".data-tree").html());
-                localStorage["state2"] = JSON.stringify($('.file-viewer').html());
-            });
         });
     function pdfHandle(){
         $('li > a').each(function(){
 
             if($(this).parent().attr("filetype")==='pdf')
             {
-                //$(this).attr("target","_blank");
+                $(this).attr("target","_blank");
                // $(this).removeClass('disabled');
                 $(this).attr("href",'file://'+$(this).parent().attr("base"));
             }
@@ -489,7 +418,6 @@
         var Cookie = readCookie();
         hasCookie(Cookie);
 
-    /*------------------------Guide handling-------------------------------------*/
 
 
 
@@ -498,21 +426,24 @@
 
 
         /*------------------------------handling localStorage-----------------------*/
-        /*if (localStorage["key"] != null || localStorage['Key2'] != null) {
+        /*if (localStorage["state"] != null || localStorage['state2'] != null) {
 
-            var contentsOfOldDiv = JSON.parse(localStorage["Key"]);
-            $(".data-tree").html(contentsOfOldDiv);
-            var contentsOfOldDiv2 = JSON.parse(localStorage["Key2"]);
-            $(".file-viewer").html(contentsOfOldDiv2);
+            var contentsOfOldDiv = (localStorage["state"]);
+
+            //$(".data-tree").html(contentsOfOldDiv);
+            reCreateSavedTree(contentsOfOldDiv,'.data-tree');
+            var contentsOfOldDiv2 =(localStorage["state2"]);
+            //$(".file-viewer").html(contentsOfOldDiv2);
+            reCreateSavedTree(contentsOfOldDiv2,'.file-viewer');
 
             console.log(contentsOfOldDiv);
             console.log(contentsOfOldDiv2);
         }
-        else{
+        else{*/
             createJStree(trees);
 
 
-        }*/
+        //}
 
      /*-----------------------------------Loader-----------------------------------*/
 
@@ -542,6 +473,7 @@
 
 
     });*/
+    /*------------------------saveName button-------------------------------------*/
     $('#saveName').click(function(){
 
         Date.prototype.today = function () {
@@ -599,7 +531,6 @@
 
         var content =$(".file-viewer ul").html();
         console.log(content);
-        debugger
         dataAraay.push(content);
         dataAraay.push(comment);
         dataAraay.push(created);
@@ -614,9 +545,6 @@
                 alert("Quota exceeded!");
             }
         }
-
-
-
 
         $('#treeName').val('');
         $('#treecomments').val('');
@@ -633,9 +561,6 @@
     /*------------------------open button-------------------------------------*/
 
     $('#open').click(function(){
-        /*-------get tree from local storage---------*/
-
-
 
         $('#putTree').empty();
 
@@ -647,7 +572,7 @@
                 var values = valueFromStore.split(",");
 
                  var name = key.toString().substring(11, key.length);
-                $('#putTree').append('<li class="get-tree" data-dismiss="modal">'+name+' - '+values[2]+'</li>');
+                $('#putTree').append('<li class="get-tree" data-dismiss="modal"><a href="#" class="tooltip-top" data-tooltip="'+values[1]+'">'+name+'   -   '+values[2]+'</a></li>');
               // str+=('<li id="get-tree">'+name+'</li>');
 
             }
@@ -660,17 +585,21 @@
          $('#open').blur();
 
 
-        $('.file-viewer').empty();
-        $('.file-viewer').jstree('destroy').empty();
-        $('.tree-preview').empty();
+
         var trees = [".file-viewer"];
         //createJStree(trees);
 
     });
+    /*-------get tree from local storage---------*/
     $(document).on("click", ".get-tree", function() {
 
+        $('.file-viewer').empty();
+        $('.file-viewer').jstree('destroy').empty();
+        $('.tree-preview').empty();
 
-        var name= $(this).html().split(' -');
+        var name= $(this).context.innerText.split(' - ');
+        //var name= $(this).html().split('-');
+
         for (var key in localStorage){
             if(key.toString().substring(11, key.length)===(name[0].toString())){
                 var valueFromStore = localStorage.getItem(key); // get the String from Local Storage
@@ -686,7 +615,7 @@
 
 
 
-        reCreateSavedTree(values[0]);
+        reCreateSavedTree(values[0],'.file-viewer');
         $('#lii1').first().find('a').text(name[0]);
         $('.tree-preview').append('<h4>'+name[0]+'</h4><h6>Last Modified : '+values[3]+'</h6><h6>Created : '+values[2]+'</h6><h6>Comments : '+values[1]+'</h6>');
 
@@ -727,14 +656,7 @@
         $('.tree-preview').empty();
 
         $(".data-tree ul").clone().appendTo('.file-viewer');
-        //$(resultsArray).appendTo('.file-viewer ul');
 
-      /*  $('.data-tree').jstree("destroy").empty();
-        var trees = [".data-tree"];
-        createJStree(trees);
-*/
-
-        //var newfile =
         $('#copyto').blur();
 
 
@@ -743,8 +665,7 @@
 
     $("#buildTree").click(function(){
 
-       // $('.data-tree').jstree();
-       // $('.data-tree').appendChild(save_tree);
+
         $('.data-tree ul').empty();
             $(resultsArray).appendTo('.data-tree ul');
 
@@ -794,34 +715,16 @@
 
 
     /*------------------------Create Jstree objects-------------------------------------*/
-    function reCreateSavedTree(values){
-        var arr=[6];
-        var testobj=[
-            { "id" : "ajson1", "parent" : "#", "text" : "Simple root node" },
-            { "id" : "ajson2", "parent" : "#", "text" : "Root node 2" },
-            { "id" : "ajson3", "parent" : "ajson2", "text" : "Child 1", "icon": "jstree-custom-file" },
-            { "id" : "ajson4", "parent" : "ajson2", "text" : "Child 2","icon": "jstree-custom-file-pdf"  },
-            { "id" : "ajson5", "parent" : "#", "text" : "Root node 2" },
-            { "id" : "ajson6", "parent" : "ajson5", "text" : "Child 2","icon": "jstree-custom-file-pdf"  },
-            { "id" : "ajson7", "parent" : "ajson6", "text" : "Child 2","icon": "jstree-custom-file-pdf"  },
-            ];
-        arr[0]={ "id" : "ajson1", "parent" : "#", "text" : "Simple root node" };
-        arr[1]={ "id" : "ajson2", "parent" : "#", "text" : "Simple root node" };
+    function reCreateSavedTree(values,name){
+
         var obj = parsing(values);
-        console.log(arr);
-        console.log(obj);
 
-        debugger
-
-        var new_tree = $('.file-viewer').jstree({
+        var new_tree = $(name).jstree({
             'core': {
                 "check_callback": true,
-                'data' : obj
-
-
-
-
+                'data' :obj
             },
+
             "plugins": [
                 "contextmenu", "dnd", "search",
                 "state", "types", "wholerow"
@@ -839,14 +742,12 @@
      /*----------------------------------------------------------------------------*/
      function parsing(value){
 
-        var test =value.toString().split('treeitem');
-         test.splice(0,1);
-         var treearray = [];
-          //console.log(test);
-         //console.log(test);
-var j=0;
-         test.forEach(function(val){
-            var parent='#';
+        var tree =value.toString().split('treeitem');
+         tree.splice(0,1);
+         var treearray = [];var temparray = [];
+         var j=0; var k=0;
+         tree.forEach(function(val){
+             var parent='#';
              var id = '#';
              var base = '#';
              var text  = 'New node';
@@ -860,10 +761,10 @@ var j=0;
                                if(j !=0){
                                    //parent = index[i+1];
                                    treearray.forEach(function(entry){
-                                        console.log(entry.base);
+                                        console.log(entry.li_attr.base);
                                         console.log(index[i+1]);
 
-                                       if(entry.base==index[i+1]){
+                                       if(entry.li_attr.base==index[i+1]){
 
                                            parent=entry.id;
                                        }
@@ -891,22 +792,54 @@ var j=0;
                            break;
                        case ' base=':
                                base = index[i+1];
-                               var temp = index[i+1].split('/');
-                               text = temp[temp.length-1];
+                               if(base ==='#'){
+                                   text = 'New Folder';
+                               }
+                               else{
+                                   var temp = index[i+1].split('/');
+                                   text = temp[temp.length-1];
+                               }
                            break;
                        default :
                            break;
                    }
                 }
-             treearray[j++]= ({"id" : id ,"parent" : parent,"text" : text,"icon":icon,"filetype": filetype,"base" : base});
 
+                 treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"li_attr":{"parent" : parent,"filetype": filetype,"base" : base},"children":{}});
 
          });
-        console.log(treearray);
+
+       // var temparr = [];
+         treearray=fuckingFunction(treearray,treearray[0].id,0);
+
+         console.log(treearray);
+
              return treearray;
 
      };
-     /*----------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------*/
+    function fuckingFunction(array,Pid,i){
+
+        var test3 = array[0].id;
+
+        if(i==array.length){
+
+            return array;
+        }
+        var test2 = array;
+        for(var j=i+1;j<array.length;j++){
+            var test = array[j].li_attr.parent;
+            if(array[j].li_attr.parent==Pid){
+                array = fuckingFunction(array,array[j].id,i+1);
+                array[0].children += array[j];
+                debugger
+            }
+
+        }
+        return array;
+
+    }
+    /*----------------------------------------------------------------------------*/
 
     function createJStree(trees){
         trees.forEach(function(value){
@@ -934,7 +867,7 @@ var j=0;
 
      /*------------------------display guide function-------------------------------------*/
     function displayGuide(){
-        able(1);
+        //able(1);
         $('.row').css("opacity",'0.25');
         $('.guide').css("display","inline-block");
         $('#step1').fadeIn(300);
