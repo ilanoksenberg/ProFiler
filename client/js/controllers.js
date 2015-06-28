@@ -157,7 +157,7 @@
                                     'selected': true
                                 },
                                 "li_attr": {
-                                    "parent": '#',
+                                    "parent": 'root',
                                     "fileType": 'folder',
                                     "base": '#',
                                     "isLeaf": false

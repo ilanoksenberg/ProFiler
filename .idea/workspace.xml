@@ -44,8 +44,8 @@
       <file leaf-file-name="jstree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/jstree/jstree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5185184" vertical-offset="40129" max-vertical-offset="41310">
-              <caret line="2687" column="84" selection-start-line="2687" selection-start-column="81" selection-end-line="2687" selection-end-column="84" />
+            <state vertical-scroll-proportion="3.4814816" vertical-offset="26524" max-vertical-offset="41310">
+              <caret line="1762" column="40" selection-start-line="1762" selection-start-column="29" selection-end-line="1762" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1435425372000" expanded="true" signature="135234:135247" placeholder="..." />
@@ -57,14 +57,14 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/partials/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71881187" vertical-offset="9687" max-vertical-offset="12525">
-              <caret line="839" column="35" selection-start-line="839" selection-start-column="35" selection-end-line="839" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.61393327" vertical-offset="9747" max-vertical-offset="12615">
+              <caret line="847" column="44" selection-start-line="847" selection-start-column="44" selection-end-line="847" selection-end-column="44" />
               <folding>
                 <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="e#9792#11168#0" expanded="false" />
                 <element signature="e#11229#12614#0" expanded="false" />
                 <element signature="e#12657#15106#0" expanded="false" />
-                <element signature="e#20705#23659#0" expanded="false" />
+                <element signature="e#21022#23976#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,8 +73,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1529" max-vertical-offset="3330">
-              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2535" max-vertical-offset="3330">
+              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -109,8 +109,8 @@
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/client/jstree/themes/default/style.css" />
         <option value="$PROJECT_DIR$/client/jstree/jstree.js" />
-        <option value="$PROJECT_DIR$/client/js/controllers.js" />
         <option value="$PROJECT_DIR$/client/css/app.css" />
+        <option value="$PROJECT_DIR$/client/js/controllers.js" />
         <option value="$PROJECT_DIR$/client/partials/home.html" />
       </list>
     </option>
@@ -418,13 +418,13 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23559539" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23559539" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2067239" sideWeight="0.8626466" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2067239" sideWeight="0.13735344" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2067239" sideWeight="0.86299616" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2067239" sideWeight="0.13700384" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2599232" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -437,6 +437,27 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23559539" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3987952" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2067239" sideWeight="0.13735344" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2599232" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2067239" sideWeight="0.8626466" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -480,7 +501,7 @@
             <element signature="e#9792#11168#0" expanded="false" />
             <element signature="e#11229#12614#0" expanded="false" />
             <element signature="e#12657#15106#0" expanded="false" />
-            <element signature="e#20705#23659#0" expanded="false" />
+            <element signature="e#21022#23976#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -537,7 +558,7 @@
             <element signature="e#9792#11168#0" expanded="false" />
             <element signature="e#11229#12614#0" expanded="false" />
             <element signature="e#12657#15106#0" expanded="false" />
-            <element signature="e#20705#23659#0" expanded="false" />
+            <element signature="e#21022#23976#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -790,14 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1529" max-vertical-offset="3330">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="12001" max-vertical-offset="12570">
@@ -808,8 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/jstree/jstree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5185184" vertical-offset="40129" max-vertical-offset="41310">
-          <caret line="2687" column="84" selection-start-line="2687" selection-start-column="81" selection-end-line="2687" selection-end-column="84" />
+        <state vertical-scroll-proportion="3.4814816" vertical-offset="26524" max-vertical-offset="41310">
+          <caret line="1762" column="40" selection-start-line="1762" selection-start-column="29" selection-end-line="1762" selection-end-column="40" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1435425372000" expanded="true" signature="135234:135247" placeholder="..." />
@@ -817,16 +830,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2535" max-vertical-offset="3330">
+          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/partials/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71881187" vertical-offset="9687" max-vertical-offset="12525">
-          <caret line="839" column="35" selection-start-line="839" selection-start-column="35" selection-end-line="839" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.61393327" vertical-offset="9747" max-vertical-offset="12615">
+          <caret line="847" column="44" selection-start-line="847" selection-start-column="44" selection-end-line="847" selection-end-column="44" />
           <folding>
             <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="e#9792#11168#0" expanded="false" />
             <element signature="e#11229#12614#0" expanded="false" />
             <element signature="e#12657#15106#0" expanded="false" />
-            <element signature="e#20705#23659#0" expanded="false" />
+            <element signature="e#21022#23976#0" expanded="false" />
           </folding>
         </state>
       </provider>

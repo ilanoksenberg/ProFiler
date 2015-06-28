@@ -376,7 +376,7 @@
             var len = $('.file-viewer li').length;
             /*-----------save state--------------*/
             localStorage["state2"] = $('.file-viewer ul').html();
-
+            parentUpdate();
             pdfHandle();
             if(len===0){
                 $('#create').prop("disabled",false);
@@ -395,6 +395,14 @@
             /*------------------------set local storage-------------------------------------*/
 
         });
+         function parentUpdate(){
+             $('.file-viewer ul >li').each(function() {
+                if($(this).parent().attr('class')==='jstree-children'){
+                    $(this).attr('parent',$(this).parent().parent().attr('id'));
+
+                }
+             });
+         }
     function pdfHandle(){
         $('li > a').each(function(){
 
@@ -783,21 +791,20 @@
                    switch (index[i].toString()){
                        case ' parent=' :
                                if(j !=0){
-                                   //parent = index[i+1];
-                                   treearray.forEach(function(entry){
+                                   parent = index[i+1];
+                                  /* treearray.forEach(function(entry){
                                         //console.log(entry.li_attr.base);
                                         console.log(index[i+1]);
 
-                                       if(entry.li_attr.base==index[i+1]){
+                                      /* if(entry.li_attr.base==index[i+1]){
 
-                                        parent=entry.id;
-                                        }
+                                            parent=entry.id;
+                                        }*/
                                        /*if(entry.base==index[i+1]){
 
                                            parent=entry.id;
-                                       }*/
-                                   })
-
+                                       }*
+                                   })*/
 
                                }
                            break;
@@ -838,8 +845,7 @@
              temparray.splice(0,1);
              temparray = temparray[0].split('>');
              temparray.splice(0,1);
-             if(text != 'New Folder')
-                text = temparray[0].toString();
+             text = temparray[0].toString();
 
              temparray =[];
                  treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"li_attr":{"parent" : parent,"filetype": filetype,"base" : base},"children":[]});
