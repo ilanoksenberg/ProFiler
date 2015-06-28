@@ -719,6 +719,11 @@
 
         var obj = parsing(values);
 
+        //obj={"id" : "1" ,"text" : "1","icon":"","li_attr":{"parent" : "#","filetype": "","base" : ""},"children":[{"id" : "2" ,"text" : "1","icon":"","li_attr":{"parent" : "1","filetype": "","base" : ""},"children":[{"id" : "3" ,"text" : "1","icon":"","li_attr":{"parent" : "2","filetype": "","base" : ""},"children":[]}]}]}
+        //obj2={"id" : "1" ,"text" : "1","icon":"","li_attr":{"parent" : "#","filetype": "","base" : ""},"children":[]};
+        //obj.children[0].children[0].children[0] = obj2;
+        console.log(obj);
+
         var new_tree = $(name).jstree({
             'core': {
                 "check_callback": true,
@@ -761,13 +766,17 @@
                                if(j !=0){
                                    //parent = index[i+1];
                                    treearray.forEach(function(entry){
-                                        console.log(entry.li_attr.base);
+                                        //console.log(entry.li_attr.base);
                                         console.log(index[i+1]);
 
                                        if(entry.li_attr.base==index[i+1]){
 
+                                        parent=entry.id;
+                                        }
+                                       /*if(entry.base==index[i+1]){
+
                                            parent=entry.id;
-                                       }
+                                       }*/
                                    })
 
 
@@ -805,37 +814,45 @@
                    }
                 }
 
-                 treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"li_attr":{"parent" : parent,"filetype": filetype,"base" : base},"children":{}});
-
+                 treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"li_attr":{"parent" : parent,"filetype": filetype,"base" : base},"children":[]});
+                // treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"parent" : parent,"filetype": filetype,"base" : base});
+             debugger
          });
 
        // var temparr = [];
-         treearray=fuckingFunction(treearray,treearray[0].id,0);
+         treearray=fuckingFunction(treearray,treearray[0].id,0,0);
 
-         console.log(treearray);
-
+         console.log(treearray[0]);
              return treearray;
 
-     };
+     };var k=0;
     /*----------------------------------------------------------------------------*/
-    function fuckingFunction(array,Pid,i){
+    function fuckingFunction(array,Pid,i,k){
 
         var test3 = array[0].id;
 
         if(i==array.length){
-
+            k=0;
             return array;
         }
+
         var test2 = array;
+        var test4 = k;
         for(var j=i+1;j<array.length;j++){
+
             var test = array[j].li_attr.parent;
             if(array[j].li_attr.parent==Pid){
-                array = fuckingFunction(array,array[j].id,i+1);
-                array[0].children += array[j];
-                debugger
+                array = fuckingFunction(array,array[j].id,i+1,k);
+                var len = array[i].children.length;
+                array[i].children[array[i].children.length] = array[j];
+                array.splice(j, 1);
+                j--;
+
             }
 
         }
+        k=0;
+
         return array;
 
     }
