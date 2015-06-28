@@ -41,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jstree.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jstree.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/jstree/jstree.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3610586" vertical-offset="16399" max-vertical-offset="41310">
-              <caret line="1106" column="53" selection-start-line="1106" selection-start-column="53" selection-end-line="1106" selection-end-column="53" />
+            <state vertical-scroll-proportion="-6.5185184" vertical-offset="40129" max-vertical-offset="41310">
+              <caret line="2687" column="84" selection-start-line="2687" selection-start-column="81" selection-end-line="2687" selection-end-column="84" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1435425372000" expanded="true" signature="135234:135247" placeholder="..." />
@@ -54,18 +54,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/partials/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.291667" vertical-offset="10238" max-vertical-offset="12750">
-              <caret line="818" column="21" selection-start-line="818" selection-start-column="21" selection-end-line="818" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.71881187" vertical-offset="9687" max-vertical-offset="12525">
+              <caret line="839" column="35" selection-start-line="839" selection-start-column="35" selection-end-line="839" selection-end-column="35" />
               <folding>
-                <element signature="n#div#4;n#div#2;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#9197#10573#0" expanded="false" />
-                <element signature="e#10634#12019#0" expanded="false" />
-                <element signature="e#12062#14511#0" expanded="false" />
+                <element signature="e#9792#11168#0" expanded="false" />
+                <element signature="e#11229#12614#0" expanded="false" />
+                <element signature="e#12657#15106#0" expanded="false" />
+                <element signature="e#20705#23659#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1529" max-vertical-offset="3330">
+              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,8 +83,8 @@
       <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7992" max-vertical-offset="11520">
-              <caret line="546" column="21" selection-start-line="546" selection-start-column="21" selection-end-line="546" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4891" max-vertical-offset="12570">
+              <caret line="832" column="1" selection-start-line="832" selection-start-column="1" selection-end-line="832" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -98,8 +108,8 @@
         <option value="$PROJECT_DIR$/server/views/index.html" />
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/client/jstree/themes/default/style.css" />
-        <option value="$PROJECT_DIR$/client/js/controllers.js" />
         <option value="$PROJECT_DIR$/client/jstree/jstree.js" />
+        <option value="$PROJECT_DIR$/client/js/controllers.js" />
         <option value="$PROJECT_DIR$/client/css/app.css" />
         <option value="$PROJECT_DIR$/client/partials/home.html" />
       </list>
@@ -466,11 +476,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="765">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
           <folding>
-            <element signature="n#div#4;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#9197#10573#0" expanded="false" />
-            <element signature="e#10634#12019#0" expanded="false" />
-            <element signature="e#12062#14511#0" expanded="false" />
+            <element signature="e#9792#11168#0" expanded="false" />
+            <element signature="e#11229#12614#0" expanded="false" />
+            <element signature="e#12657#15106#0" expanded="false" />
+            <element signature="e#20705#23659#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -523,11 +533,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="765">
           <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
           <folding>
-            <element signature="n#div#4;n#div#2;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#9197#10573#0" expanded="false" />
-            <element signature="e#10634#12019#0" expanded="false" />
-            <element signature="e#12062#14511#0" expanded="false" />
+            <element signature="e#9792#11168#0" expanded="false" />
+            <element signature="e#11229#12614#0" expanded="false" />
+            <element signature="e#12657#15106#0" expanded="false" />
+            <element signature="e#20705#23659#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -765,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2102" max-vertical-offset="3330">
-          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
@@ -787,35 +790,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/app.css">
+    <entry file="file://$PROJECT_DIR$/client/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7992" max-vertical-offset="11520">
-          <caret line="546" column="21" selection-start-line="546" selection-start-column="21" selection-end-line="546" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1529" max-vertical-offset="3330">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/partials/home.html">
+    <entry file="file://$PROJECT_DIR$/client/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.291667" vertical-offset="10238" max-vertical-offset="12750">
-          <caret line="818" column="21" selection-start-line="818" selection-start-column="21" selection-end-line="818" selection-end-column="21" />
-          <folding>
-            <element signature="n#div#4;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#9197#10573#0" expanded="false" />
-            <element signature="e#10634#12019#0" expanded="false" />
-            <element signature="e#12062#14511#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="12001" max-vertical-offset="12570">
+          <caret line="832" column="1" selection-start-line="832" selection-start-column="1" selection-end-line="832" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/jstree/jstree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3610586" vertical-offset="16399" max-vertical-offset="41310">
-          <caret line="1106" column="53" selection-start-line="1106" selection-start-column="53" selection-end-line="1106" selection-end-column="53" />
+        <state vertical-scroll-proportion="-6.5185184" vertical-offset="40129" max-vertical-offset="41310">
+          <caret line="2687" column="84" selection-start-line="2687" selection-start-column="81" selection-end-line="2687" selection-end-column="84" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1435425372000" expanded="true" signature="135234:135247" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/partials/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71881187" vertical-offset="9687" max-vertical-offset="12525">
+          <caret line="839" column="35" selection-start-line="839" selection-start-column="35" selection-end-line="839" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#div#5;n#div#2;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#9792#11168#0" expanded="false" />
+            <element signature="e#11229#12614#0" expanded="false" />
+            <element signature="e#12657#15106#0" expanded="false" />
+            <element signature="e#20705#23659#0" expanded="false" />
           </folding>
         </state>
       </provider>

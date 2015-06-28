@@ -358,6 +358,76 @@ pre{
   background-color: #5890AD;
   color: #000000;
 }
+#step41{
+  display: none;
+  position: relative;
+  left: 42px;
+  -webkit-animation: fadein 2s;
+}
+#step41_Img{
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  z-index: 999;
+  height: 138px;
+  width:202px;
+}
+#step41_Txt{
+  position: absolute;
+  left: 200px;
+  top: 108px;
+  z-index: 999;
+  height: 81px;
+  width: 183px;
+  color: #000066;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
+}
+#next41{
+  position: absolute;
+  left: 293px;
+  top: 172px;
+  z-index: 999;
+  background-color: #5890AD;
+  color: #000000;
+}
+#step42{
+  display: none;
+  position: relative;
+  left: 89px;
+  -webkit-animation: fadein 2s;
+}
+#step42_Img{
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  z-index: 999;
+  height: 138px;
+  width:202px;
+}
+#step42_Txt{
+  position: absolute;
+  left: 200px;
+  top: 108px;
+  z-index: 999;
+  height: 81px;
+  width: 183px;
+  color: #000066;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
+}
+#next42{
+  position: absolute;
+  left: 336px;
+  top: 172px;
+  z-index: 999;
+  background-color: #5890AD;
+  color: #000000;
+}
 #step5{
    display: none;
    position: relative;

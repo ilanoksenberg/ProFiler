@@ -26,6 +26,20 @@
                 Next
             </button>
         </div>
+        <div id="step41">
+            <div id = "step41_Img"></div>
+            <div id = "step41_Txt">You Can Save Your Own Tree</div>
+            <button id="next41"type="button" class="btn btn-default" aria-label="right Align">
+                Next
+            </button>
+        </div>
+        <div id="step42">
+            <div id = "step42_Img"></div>
+            <div id = "step42_Txt">You Can Choose and Display Your Saved Trees</div>
+            <button id="next42"type="button" class="btn btn-default" aria-label="right Align">
+                Next
+            </button>
+        </div>
         <div id="step5">
             <div id = "step5_Img"></div>
             <div id = "step5_Txt">Drag & Drop Files and Folders</div>
@@ -760,7 +774,12 @@
              var filetype = 'folder';
              var index = val.split('"');
              console.log(index);
+
                 for(var i=0 ; i<index.length;i++){
+                    if(index[i].toString().includes('</i>'))
+
+                         temparray.push( index[i].toString());
+
                    switch (index[i].toString()){
                        case ' parent=' :
                                if(j !=0){
@@ -812,11 +831,20 @@
                        default :
                            break;
                    }
-                }
 
+                }
+             temparray.splice(0,1);
+             temparray = temparray[0].split('>'&&'<');
+             temparray.splice(0,1);
+             temparray = temparray[0].split('>');
+             temparray.splice(0,1);
+             if(text != 'New Folder')
+                text = temparray[0].toString();
+
+             temparray =[];
                  treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"li_attr":{"parent" : parent,"filetype": filetype,"base" : base},"children":[]});
                 // treearray[j++]= ({"id" : id ,"text" : text,"icon":icon,"parent" : parent,"filetype": filetype,"base" : base});
-             debugger
+
          });
 
        // var temparr = [];
@@ -907,11 +935,26 @@
 
             Cookie = readCookie();
         });
-        $('#next5').click(function(){
-            $('#step5').fadeOut(300);
+        $('#next41').click(function(){
+            $('#step41').fadeOut(300);
+            $('#step42').css("display","inline-block");
+            $('#save').removeClass("blinking");
+            $('#open').addClass("blinking");
+
+            Cookie = readCookie();
+        });
+        $('#next42').click(function(){
+            $('#step42').fadeOut(300);
             $('#step6').css("display","inline-block");
+            $('#open').removeClass("blinking");
             $('#reset').addClass("blinking");
 
+            Cookie = readCookie();
+        });
+        $('#next5').click(function(){
+            $('#step5').fadeOut(300);
+            $('#step41').css("display","inline-block");
+            $('#save').addClass("blinking");
             Cookie = readCookie();
         });
         $('#next6').click(function(){
