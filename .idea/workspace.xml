@@ -54,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/partials/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4556701" vertical-offset="4669" max-vertical-offset="15525">
+            <state vertical-scroll-proportion="-4.3333335" vertical-offset="4669" max-vertical-offset="15525">
               <caret line="339" column="61" selection-start-line="339" selection-start-column="61" selection-end-line="339" selection-end-column="61" />
               <folding>
                 <element signature="n#div#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="false" />
@@ -86,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.357143" vertical-offset="0" max-vertical-offset="13410">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.60649085" vertical-offset="7261" max-vertical-offset="13500">
+              <caret line="504" column="12" selection-start-line="504" selection-start-column="12" selection-end-line="504" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -334,8 +334,8 @@
       <recent name="$PROJECT_DIR$/client/imgs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/js" />
       <recent name="$PROJECT_DIR$/client/imgs" />
+      <recent name="$PROJECT_DIR$/client/js" />
       <recent name="$PROJECT_DIR$/client/jstree" />
       <recent name="$PROJECT_DIR$/client/jstree/themes" />
       <recent name="$PROJECT_DIR$" />
@@ -829,21 +829,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.357143" vertical-offset="0" max-vertical-offset="13410">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/partials/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4556701" vertical-offset="4669" max-vertical-offset="15525">
+        <state vertical-scroll-proportion="-4.3333335" vertical-offset="4669" max-vertical-offset="15525">
           <caret line="339" column="61" selection-start-line="339" selection-start-column="61" selection-end-line="339" selection-end-column="61" />
           <folding>
             <element signature="n#div#0;n#div#2;n#div#2;n#div#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60649085" vertical-offset="7261" max-vertical-offset="13500">
+          <caret line="504" column="12" selection-start-line="504" selection-start-column="12" selection-end-line="504" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

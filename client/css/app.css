@@ -47,6 +47,8 @@ hr {
 }
 .section1{
   overflow: auto;
+  background-color: #444647;
+
 }
 .section2,.section3,.section4{
   border-top: 2px solid #8E9194;
@@ -353,21 +355,22 @@ pre{
 #step4{
   display: none;
   position: relative;
+  top: 10px;
+  left: 977px;
   -webkit-animation: fadein 2s;
 }
 #step4_Img{
   position: absolute;
-  top: 12px;
-  left: -12px;
-  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  top: 24px;
+  left: -21px;
+  background: url('../imgs/arrowup2.png')no-repeat;
   z-index: 999;
-  height: 138px;
-  width:202px;
+  height: 200px;
+  width: 100px;
 }
 #step4_Txt{
   position: absolute;
-  left: 200px;
-  top: 108px;
+  top: 213px;
   z-index: 999;
   height: 81px;
   width: 183px;
@@ -378,8 +381,8 @@ pre{
 }
 #next4{
   position: absolute;
-  left: 293px;
-  top: 172px;
+  left: 93px;
+  top: 312px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
@@ -387,22 +390,23 @@ pre{
 #step41{
   display: none;
   position: relative;
-  left: 42px;
+  top: 21px;
+  left: 657px;
   -webkit-animation: fadein 2s;
 }
 #step41_Img{
   position: absolute;
   top: 12px;
-  left: -12px;
-  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  left: 342px;
+  background: url('../imgs/arrowup2.png')no-repeat;
   z-index: 999;
-  height: 138px;
-  width:202px;
+  height: 200px;
+  width:100px;
 }
 #step41_Txt{
   position: absolute;
-  left: 200px;
-  top: 108px;
+  left: 290px;
+  top: 202px;
   z-index: 999;
   height: 81px;
   width: 183px;
@@ -413,8 +417,8 @@ pre{
 }
 #next41{
   position: absolute;
-  left: 293px;
-  top: 172px;
+  left: 400px;
+  top: 272px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
@@ -422,14 +426,15 @@ pre{
 #step42{
   display: none;
   position: relative;
-  left: 89px;
+  left: 716px;
+  bottom: 47px;
   -webkit-animation: fadein 2s;
 }
 #step42_Img{
   position: absolute;
   top: 12px;
-  left: -12px;
-  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  left: 402px;
+  background: url('../imgs/arrowcurveupright2.png')no-repeat;
   z-index: 999;
   height: 138px;
   width:202px;
@@ -491,14 +496,14 @@ pre{
 #step6{
   display: none;
   position: relative;
-  left: 149px;
+  left: 706px;
+  bottom: 29px;
   -webkit-animation: fadein 2s;
 }
 #step6_Img{
   position: absolute;
-  top: 23px;
-  left: -12px;
-  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  left: 512px;
+  background: url('../imgs/arrowcurveupright2.png')no-repeat;
   z-index: 999;
   height: 138px;
   width:202px;
@@ -526,7 +531,8 @@ pre{
 #step7{
   display: none;
   position: relative;
-  left: 1000px;
+  left: 961px;
+  bottom: 56px;
   -webkit-animation: fadein 2s;
 }
 #step7_Img{
@@ -570,7 +576,7 @@ pre{
 .section3.col-md-4{
   width: 28.333333%;
   padding-right: 0;
-  padding-left: 5px;
+  padding-left: 7px;
 }
  .col-md-1{
   width: 17.333333%;
