@@ -956,31 +956,32 @@
 
      /*------------------------display guide function-------------------------------------*/
     function displayGuide(){
-        //able(1);
+        able(1);
         $('.row').css("opacity",'0.25');
+
         $('.guide').css("display","inline-block");
         $('#step1').fadeIn(300);
         $('#step2').fadeIn(300);
         $('#step3').fadeIn(300);
 
         $('#next').click(function(){
-            $('#step1').fadeOut(300);
-            $('#step2').fadeOut(300);
-            $('#step3').fadeOut(300);
+            $('#step1').fadeOut(200);
+            $('#step2').fadeOut(200);
+            $('#step3').fadeOut(200);
             $('#step4').css("display","inline-block");
             $('#create').addClass("blinking");
             Cookie = readCookie();
         });
 
         $('#next4').click(function(){
-            $('#step4').fadeOut(300);
+            $('#step4').fadeOut(200);
             $('#step5').css("display","inline-block");
             $('#create').removeClass("blinking");
 
             Cookie = readCookie();
         });
         $('#next41').click(function(){
-            $('#step41').fadeOut(300);
+            $('#step41').fadeOut(200);
             $('#step42').css("display","inline-block");
             $('#save').removeClass("blinking");
             $('#open').addClass("blinking");
@@ -988,7 +989,7 @@
             Cookie = readCookie();
         });
         $('#next42').click(function(){
-            $('#step42').fadeOut(300);
+            $('#step42').fadeOut(200);
             $('#step6').css("display","inline-block");
             $('#open').removeClass("blinking");
             $('#reset').addClass("blinking");
@@ -996,20 +997,20 @@
             Cookie = readCookie();
         });
         $('#next5').click(function(){
-            $('#step5').fadeOut(300);
+            $('#step5').fadeOut(200);
             $('#step41').css("display","inline-block");
             $('#save').addClass("blinking");
             Cookie = readCookie();
         });
         $('#next6').click(function(){
-            $('#step6').fadeOut(300);
+            $('#step6').fadeOut(200);
             $('#step7').css("display","inline-block");
             $('#reset').removeClass("blinking");
             $('#help').addClass("blinking");
             Cookie = readCookie();
         });
         $('#next7').click(function(){
-            $('#step7').fadeOut(300);
+            $('#step7').fadeOut(200);
             $('#help').removeClass("blinking");
             $('.row').css("opacity",'1');
             $('.guide').css("display","none");
@@ -1027,6 +1028,7 @@
     function able(flag){
         if(flag){
             $(".toolBar").css("pointer-events","none");
+            $(".row").css("pointer-events","none");
 
 
 
@@ -1034,6 +1036,8 @@
         }
         else{
             $(".toolBar").css("pointer-events","auto");
+            $(".row").css("pointer-events","auto");
+
 
 
         }
