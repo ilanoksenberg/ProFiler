@@ -25,13 +25,14 @@ hr {
   font-size: 15px;
   color: #ffffff;
 }
+
 .file-viewer {
   background-color:#EDF0F2;
   height: 720px;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-left:1px solid #9EA1A3;
   border-top:2px solid #8E9194;
+  border-left:1px solid #9EA1A3;
   overflow: auto;
 }
 .data-tree{
@@ -40,7 +41,33 @@ hr {
   padding-top: 20px;
   padding-bottom: 20px;
   border-top:2px solid #8E9194;
+
   overflow: auto;
+
+}
+.section2{
+
+  background-color:#fff;
+
+}
+.toolSection2{
+  background-color:#fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.toolSection2 h3{
+  float: left;
+  margin-right: 14px;
+}
+.section3{
+  background-color:#fff;
+
+}
+.toolSection3{
+  background-color:#fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
 }
 .tree-preview {
@@ -78,7 +105,8 @@ h3{
   width: 150px;
   display: inline-block;
 }
-.data-tree{
+.row{
+  width:100%;
 }
 .jstree-wholerow-ul{
   min-width: 0;
@@ -90,15 +118,10 @@ input:focus {
 input#q{
   display: inline-block;
   height: 34px;
-  width:200px;
-  margin-left: 10px;
-  margin-right: 1px;
-  margin-top: -1px;
+  width:160px;
   padding-left: 9px;
 }
 #s{
-  display: inline-block;
-  margin-left: 12%;
 }
 #submit{
   display: inline-block;
@@ -539,13 +562,19 @@ pre{
   padding: 0;
 }
 .dynNav{
-  border-top:2px solid #8E9194;
 
   background-color: #EDF0F2;
+}
+.dynNav ul{
+
+  background-color: #fff;
 }
 .nav>li>a:hover{
   background-color: #c8cbc2;
 }s
+.nav.nav-tabs{
+  background-color: #fff;
+ }
 .nav {
   margin-bottom: -10px;
   margin-top: -10px;

@@ -79,21 +79,7 @@
                   <span  class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
               </button>
           </div>
-          <form id="s">
-              <!--<div class="btn-group" id="copytoRight">
-                  <button type="button" id="copyto" class="btn btn-default" aria-label="left Align">
-                      <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-                  </button>
-              </div>
-              <div class="btn-group" id="buildTreeRight">
-                  <button type="button" id="buildTree" class="btn btn-default" aria-label="left Align">
-                      <span class="glyphicon glyphicon-buildTree" aria-hidden="true"></span>
-                  </button>
-              </div>-->
-              <button type="submit" id="submit" class="btn btn-default"  aria-label="left Align">Search</button>
-              <input type="search" class="ng-tree-search" placeholder="Search" id="q" />
 
-          </form>
 
           <div class="btn-group">
               <button id="create"type="button" class="btn btn-default" aria-label="left Align">
@@ -118,54 +104,91 @@
           <!--/*---------localstorage View list-------*/-->
 
       </div>
-        <h3 id="buildTreeHeader">{{buildHeader}}</h3>
-        <h3 id="searchsectionHeader">{{searchHeader}}</h3>
     </div>
 
 
 
     <div class="row">
-        <div class="col-md-3 tree-browser ">
-          <js-tree tree-events="select_node:nodeSelected"  tree-events="dnd_move:dndMove" tree-ajax="/api/tree" tree-core="tree_core"  tree-rules = "tree_rules" tree-plugins="dnd,state,types,cookies"></js-tree>
+        <div class="section1 col-md-3">
+            <div class=" tree-browser ">
+              <js-tree tree-events="select_node:nodeSelected"  tree-events="dnd_move:dndMove" tree-ajax="/api/tree" tree-core="tree_core"  tree-rules = "tree_rules" tree-plugins="dnd,state,types,cookies"></js-tree>
+            </div>
         </div>
-        <div class="dynNav col-md-3">
+        <div class="section2 col-md-4">
+            <div class="toolSection2 ">
+                <h3 >{{searchHeader}}</h3>
+                <form id="s">
+                    <!--<div class="btn-group" id="copytoRight">
+                        <button type="button" id="copyto" class="btn btn-default" aria-label="left Align">
+                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="btn-group" id="buildTreeRight">
+                        <button type="button" id="buildTree" class="btn btn-default" aria-label="left Align">
+                            <span class="glyphicon glyphicon-buildTree" aria-hidden="true"></span>
+                        </button>
+                    </div>-->
+                    <div class="input-group">
+                              <span class="input-group-btn">
+                                <button type="submit" id="submit" aria-label="left Align" class="btn btn-default" type="button">
+                                    <span  class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                </button>
+                              </span>
+                            <input type="search" class="form-control ng-tree-search"  placeholder="Search" id="q">
+                     </div>
+                    <!--<button type="submit" id="submit" class="btn btn-default"  aria-label="left Align">Search</button>
+                   // <input type="search" class="ng-tree-search" placeholder="Search" id="q" />-->
 
-            <p>
-                <div id="messagesAlert"></div>
+                </form>
 
-                <!-- Nav tabs from Bootstrap 3 -->
-                <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li id="li1" class="active"><a href="#" role="tab" data-toggle="tab">Tab 1</a></li>
-                    <li id="last"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
-                </ul>
+            </div>
+            <div class="dynNav">
 
-                    <!-- Tab panes from Bootstrap 3 -->
-                <div class="tab-content">
-                    <div class="tab-pane fade in active data-tree" id="tab1"><p>Content tab 1</p></div>
-                </div>
+                <p>
+                    <div id="messagesAlert"></div>
+
+                    <!-- Nav tabs from Bootstrap 3 -->
+                    <ul id="myTab" class="nav nav-tabs" role="tablist">
+                        <li id="li1" class="active"><a href="#" role="tab" data-toggle="tab">Tab 1</a></li>
+                        <li id="last"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
+                    </ul>
+
+                        <!-- Tab panes from Bootstrap 3 -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active data-tree" id="tab1"><p>Content tab 1</p></div>
+                    </div>
+                    </p>
+
+            </div>
+        </div>
+        <div class="section3 col-md-4">
+            <div class="toolSection3">
+
+                <h3>{{buildHeader}}</h3>
+            </div>
+            <div class="dynNav">
+
+                <p>
+                    <div id="messagesAlert2"></div>
+
+                    <!-- Nav tabs from Bootstrap 3 -->
+                    <ul id="myTab2" class="nav nav-tabs" role="tablist">
+                        <li id="lii1" class="active"><a href="#" role="tab" data-toggle="tab">Tab 1</a></li>
+                        <li id="last2"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
+                    </ul>
+                        <!-- Tab panes from Bootstrap 3 -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active file-viewer" id="tab2"><p>Content tab 1</p></div>
+                    </div>
                 </p>
 
+            </div>
         </div>
-        <div class="dynNav col-md-4">
-
-            <p>
-                <div id="messagesAlert2"></div>
-
-                <!-- Nav tabs from Bootstrap 3 -->
-                <ul id="myTab2" class="nav nav-tabs" role="tablist">
-                    <li id="lii1" class="active"><a href="#" role="tab" data-toggle="tab">Tab 1</a></li>
-                    <li id="last2"><a href="#"><span class="glyphicon glyphicon-plus"></span> Add Tab</a></li>
-                </ul>
-                    <!-- Tab panes from Bootstrap 3 -->
-                <div class="tab-content">
-                    <div class="tab-pane fade in active file-viewer" id="tab2"><p>Content tab 1</p></div>
-                </div>
-            </p>
-
-        </div>
-        <div class="tree-preview">
+        <div class="section4 col-md-1">
+            <div class="tree-preview">
 
 
+            </div>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="savedtreemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
