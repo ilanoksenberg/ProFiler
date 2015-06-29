@@ -476,10 +476,14 @@
 
     /*------------------------save button-------------------------------------*/
 
-   /* $('#save').click(function(){
-        /*-------save tree in DB/json file---------
-
-        var contentsOfOldDiv = JSON.parse(localStorage["Key"]);
+    $('#save').click(function(){
+        /*-------save tree in DB/json file---------*/
+    if(($('#lii1').first().find('a').text())!='Tab 1'){
+    $('#treeName').val($('#lii1').first().find('a').text());
+    $('#treecomments').val($('.tree-preview h6+h6+h6').text().substring(11));
+    }
+    });
+       /* var contentsOfOldDiv = JSON.parse(localStorage["Key"]);
         $(".file-viewer").html(contentsOfOldDiv);
 
 
@@ -568,8 +572,7 @@
             }
         }
 
-        $('#treeName').val('');
-        $('#treecomments').val('');
+
         $('#savechange').removeClass('glyphicon-floppy-save').addClass('glyphicon-floppy-saved');
         $( "#save" ).prop( "disabled", true );
         $('#save').blur();
