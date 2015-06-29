@@ -476,7 +476,13 @@
 
     /*------------------------save button-------------------------------------*/
 
-   /* $('#save').click(function(){
+    $('#save').click(function(){
+        //input insertion according if we have tree already
+        if(($('#lii1').first().find('a').text())!='Tab 1'){
+            $('#treeName').val($('#lii1').first().find('a').text());
+            $('#treecomments').val($('.tree-preview h6+h6+h6').text().substring(11));
+        }
+    });
         /*-------save tree in DB/json file---------
 
         var contentsOfOldDiv = JSON.parse(localStorage["Key"]);
@@ -494,7 +500,7 @@
 
 
 
-    });*/
+    });
     /*------------------------saveName button-------------------------------------*/
     $('#saveName').click(function(){
 
@@ -540,7 +546,7 @@
         }
         $('.tree-preview').empty();
         if(($('#treecomments').val().length)==0) {
-            var comment = 'null';
+            var comment = '';
             $('.tree-preview').append('<h4>'+$('#treeName').val()+'</h4><h6>Last Modified : '+lastModified+'</h6><h6>Created : '+created+'</h6><h6>Comments : '+comment+'</h6>');
 
         }
@@ -568,8 +574,9 @@
             }
         }
 
-        $('#treeName').val('');
-        $('#treecomments').val('');
+        if($('#lii1').first().find('a').text()!='Tab1'){
+            $('#treeName').val($('#lii1').first().find('a').text());
+         }
         $('#savechange').removeClass('glyphicon-floppy-save').addClass('glyphicon-floppy-saved');
         $( "#save" ).prop( "disabled", true );
         $('#save').blur();
