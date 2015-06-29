@@ -17,8 +17,6 @@ hr {
 }
 .tree-browser {
   background-color:#444647;
-  height: 784px;
-  overflow: auto;
   border-top:2px solid #8E9194;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -28,59 +26,66 @@ hr {
 
 .file-viewer {
   background-color:#EDF0F2;
-  height: 720px;
+   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   border-top:2px solid #8E9194;
   border-left:1px solid #9EA1A3;
+
   overflow: auto;
 }
 .data-tree{
   background-color:#EDF0F2;
-  height: 720px;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   border-top:2px solid #8E9194;
-
+  border-bottom:2px solid #8E9194;
+  border-left: 1px solid #9EA1A3;
+  border-right:1px solid #9EA1A3;
   overflow: auto;
-
 }
-.section2{
-
-  background-color:#fff;
-
+.section1{
+  overflow: auto;
 }
-.toolSection2{
+.section2,.section3,.section4{
+  border-top: 2px solid #8E9194;
   background-color:#fff;
-  padding-top: 10px;
+}
+.toolSection2,.toolSection3,.toolSection4{
+  background-color:#fff;
+  padding-top: 15px;
   padding-bottom: 10px;
 }
-
-.toolSection2 h3{
+.toolSection4{
+  height: 101px;
+}
+.toolSection2 h3,.toolSection3 h3{
   float: left;
   margin-right: 14px;
+  font-size: 20.5px;
+  padding-top: 5px;
 }
-.section3{
-  background-color:#fff;
 
-}
-.toolSection3{
-  background-color:#fff;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-}
 .tree-preview {
   background-color:#EDF0F2;
-  height: 784px;
-  padding-top: 62px;
-  padding-bottom: 20px;
-  border-top:2px solid #8E9194;
+   border-top:2px solid #8E9194;
+  border-left: 1px solid #9EA1A3;
+  border-right: 1px solid #9EA1A3;
+  border-bottom:2px solid #8E9194;
+
+  padding-left: 10px;
   overflow: auto;
 }
-.btn-toolbar{
+.toolbar{
   position: relative;
-  padding-top: 7px;
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+.btn-toolbar{
+  float: right;
+  padding-top: 14px;
   padding-bottom:6px;
   margin:0;
 }
@@ -99,7 +104,7 @@ h3{
 }
 
 #logo{
-  background-image: url('../imgs/logo.png');
+   background-image: url('../imgs/logo.png');
   margin-top: 11px;
   height: 38px;
   width: 150px;
@@ -107,6 +112,7 @@ h3{
 }
 .row{
   width:100%;
+  margin-left: 2px;
 }
 .jstree-wholerow-ul{
   min-width: 0;
@@ -118,7 +124,7 @@ input:focus {
 input#q{
   display: inline-block;
   height: 34px;
-  width:160px;
+  width:130px;
   padding-left: 9px;
 }
 #s{
@@ -127,9 +133,6 @@ input#q{
   display: inline-block;
   background-color: #C1D0DE;
   outline-width: thin;
-  float: right;
-}
-#guidehelp{
   float: right;
 }
 #help{
@@ -558,14 +561,33 @@ pre{
 #sectionA,#sectionB,#sectionC,#sectionD{
   width:100%;
 }
-.col-md-3.dynNav,.col-md-6.dynNav{
+.col-md-3,.col-md-6{
   padding: 0;
+}
+.col-md-4{
+  width: 29.333333%;
+}
+.section3.col-md-4{
+  width: 28.333333%;
+  padding-right: 0;
+  padding-left: 5px;
+}
+ .col-md-1{
+  width: 17.333333%;
+  padding-left: 0px;
+   padding-right:17px ;
+}
+ .toolSection3>.btn-group button{
+   background-color: #C1D0DE ;
+ }
+.input-group{
+  width: 140px;
 }
 .dynNav{
 
   background-color: #EDF0F2;
 }
-.dynNav ul{
+.dynNav ul.nav.nav-tabs{
 
   background-color: #fff;
 }
@@ -604,6 +626,10 @@ pre{
   padding:10px;
   border-bottom: solid 1px #ccc;
   z-index: 33;
+}
+.nav-tabs>li.active>a{
+  background-color: #EDF0F2;
+  border-bottom: 2px solid #EDF0F2;
 }
 .size>ul.list h3 {
   text-align: center;
