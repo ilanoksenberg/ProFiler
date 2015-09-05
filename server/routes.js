@@ -60,7 +60,7 @@
           },
           "li_attr": {
             "parent": path.join(_p),
-            "fileType": s.isDirectory() ? 'foler' : fileType(f),
+            "fileType": s.isDirectory() ? 'folder' : fileType(f).substring(19),
             "base": path.join(_p, f),
             "isLeaf": !s.isDirectory()
           },

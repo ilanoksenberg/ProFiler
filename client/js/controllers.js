@@ -27,25 +27,23 @@
 
 
             $scope.buildHeader = "Build Your Own Tree";
+            $scope.searchHeader = "Search In Your Tree";
 
-            $scope.dndStart = function(data, element,helper,event){
-                alert('vv');
-                console.log('yes');
-                debugger
 
-            };
-            $scope.dndMove = function(data, element,helper,event){
-                alert('vv');
-                debugger
-
-            };
             /*------------------------handle node selected-------------------------------------*/
 
             $scope.nodeSelected = function (e, data) {
+
                 console.log("yes");
                 var treeNode = data.node;
-                var _l = data.node.li_attr;
+                var test = $('#'+treeNode.id).attr("href");
+
+                treeNode.attr("href","file://"+treeNode.id);
+               //window.location.href("file://"+treeNode.id);
+                 var _l = data.node.li_attr;
                 console.log(treeNode.id);
+                //PDFJS.getDocument('file:/'+treeNode.id);
+
                 /*------------------handle files selected---------------*/
 
                 if (_l.isLeaf) {
@@ -144,6 +142,8 @@
             $('#create').click(function () {
                 $( "#reset" ).prop( "disabled", false );
                 $('.file-viewer').jstree("destroy").empty();
+                $('.tree-preview').empty();
+
                 var new_tree = $('.file-viewer').jstree({
                     'core': {
                         "check_callback": true,
@@ -155,6 +155,12 @@
                                 'state': {
                                     'opened': false,
                                     'selected': true
+                                },
+                                "li_attr": {
+                                    "parent": 'root',
+                                    "fileType": 'folder',
+                                    "base": '#',
+                                    "isLeaf": false
                                 }
 
                             }

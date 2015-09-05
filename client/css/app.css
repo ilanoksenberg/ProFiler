@@ -17,7 +17,7 @@ hr {
 }
 .tree-browser {
   background-color:#444647;
-  height: 774px;
+  height: 784px;
   overflow: auto;
   border-top:2px solid #8E9194;
   padding-top: 20px;
@@ -43,8 +43,16 @@ hr {
   overflow: auto;
 
 }
-
+.tree-preview {
+  background-color:#EDF0F2;
+  height: 784px;
+  padding-top: 62px;
+  padding-bottom: 20px;
+  border-top:2px solid #8E9194;
+  overflow: auto;
+}
 .btn-toolbar{
+  position: relative;
   padding-top: 7px;
   padding-bottom:6px;
   margin:0;
@@ -57,6 +65,12 @@ h3{
   margin-left: 68%;
   margin-top: -30px;
 }
+#searchsectionHeader{
+  position: absolute;
+  top: 30px;
+  left: 436px;
+}
+
 #logo{
   background-image: url('../imgs/logo.png');
   margin-top: 11px;
@@ -84,7 +98,7 @@ input#q{
 }
 #s{
   display: inline-block;
-  margin-left: 139px;
+  margin-left: 12%;
 }
 #submit{
   display: inline-block;
@@ -92,14 +106,26 @@ input#q{
   outline-width: thin;
   float: right;
 }
-
+#guidehelp{
+  float: right;
+}
+#help{
+  height: 34px;
+  width: 40.0156px;
+  padding-left: 9px;
+}
+.glyphicon.glyphicon-question-sign{
+  font-size: 20px;
+}
 #reset{
   display: inline-block;
   }
 .modal-dialog {
   width: 400px;
 }
-
+.form-group input{
+  margin-bottom: 10px;
+}
 
 pre{
   background-color: #EDF0F2;
@@ -193,13 +219,14 @@ pre{
   margin-left: 5px;
 }
 #step1{
-  position: absolute;
+  position: relative;
   left: 900px;
+  top: 240px;
   -webkit-animation: fadein 2s;
 }
 #step1_Img{
-  position: relative;
-  top: 370px;
+  position: absolute;
+  top: 132px;
   left: 100px;
    background: url('../imgs/arrowup.png')no-repeat;
   z-index: 999;
@@ -210,7 +237,7 @@ pre{
 }
 
 #step1_Txt{
-  position: relative;
+  position: absolute;
   left: 58px;
   font-size: 20px;
   z-index: 999;
@@ -228,24 +255,26 @@ pre{
 }
 @-webkit-keyframes slideUp{
   0%   { right:100px;top:800px;}
-  100% { right:100px;top:370px;}
+  100% { right:100px;top:132px;}
 }
 #next{
-  position: relative;
+  position: absolute;
   left: 270px;
+  top:64px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 
 #step2{
-   position: absolute;
+   position: relative;
   left: 357px;
+  top: 240px;
   -webkit-animation: fadein 2s;
 }
 #step2_Img{
-  position: relative;
-  top: 370px;
+  position: absolute;
+  top: 132px;
   left: 100px;
   background: url('../imgs/arrowup.png')no-repeat;
   z-index: 999;
@@ -255,7 +284,7 @@ pre{
   animation: slideUp 2s;
 }
 #step2_Txt{
-  position: relative;
+  position: absolute;
    left: 26px;
   z-index: 999;
   height: 70px;
@@ -266,12 +295,13 @@ pre{
 }
 
 #step3{
-   position: absolute;
+   position: relative;
   -webkit-animation: fadein 2s;
+  top: 240px;
 }
 #step3_Img{
-  position: relative;
-  top: 370px;
+  position: absolute;
+  top: 132px;
   left: 100px;
   background: url('../imgs/arrowup.png')no-repeat;
   z-index: 999;
@@ -281,7 +311,7 @@ pre{
   animation: slideUp 2s;
 }
 #step3_Txt{
-  position: relative;
+  position: absolute;
   left: 26px;
   z-index: 999;
   height: 70px;
@@ -296,12 +326,12 @@ pre{
 
 #step4{
   display: none;
-  position: absolute;
+  position: relative;
   -webkit-animation: fadein 2s;
 }
 #step4_Img{
-  position: relative;
-  top: 23px;
+  position: absolute;
+  top: 12px;
   left: -12px;
   background: url('../imgs/arrowcurveup2.png')no-repeat;
   z-index: 999;
@@ -309,9 +339,9 @@ pre{
   width:202px;
 }
 #step4_Txt{
-  position: relative;
+  position: absolute;
   left: 200px;
-  top: -23px;
+  top: 108px;
   z-index: 999;
   height: 81px;
   width: 183px;
@@ -321,30 +351,101 @@ pre{
   text-shadow: 0px 0px 3px #fff;
 }
 #next4{
+  position: absolute;
+  left: 293px;
+  top: 172px;
+  z-index: 999;
+  background-color: #5890AD;
+  color: #000000;
+}
+#step41{
+  display: none;
   position: relative;
-  left: 268px;
+  left: 42px;
+  -webkit-animation: fadein 2s;
+}
+#step41_Img{
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  z-index: 999;
+  height: 138px;
+  width:202px;
+}
+#step41_Txt{
+  position: absolute;
+  left: 200px;
+  top: 108px;
+  z-index: 999;
+  height: 81px;
+  width: 183px;
+  color: #000066;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
+}
+#next41{
+  position: absolute;
+  left: 293px;
+  top: 172px;
+  z-index: 999;
+  background-color: #5890AD;
+  color: #000000;
+}
+#step42{
+  display: none;
+  position: relative;
+  left: 89px;
+  -webkit-animation: fadein 2s;
+}
+#step42_Img{
+  position: absolute;
+  top: 12px;
+  left: -12px;
+  background: url('../imgs/arrowcurveup2.png')no-repeat;
+  z-index: 999;
+  height: 138px;
+  width:202px;
+}
+#step42_Txt{
+  position: absolute;
+  left: 200px;
+  top: 108px;
+  z-index: 999;
+  height: 81px;
+  width: 183px;
+  color: #000066;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
+}
+#next42{
+  position: absolute;
+  left: 336px;
+  top: 172px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 #step5{
    display: none;
-   position: absolute;
+   position: relative;
+   top: 74px;
+   left: 200px;
    -webkit-animation: fadein 2s;
  }
 #step5_Img{
-  position: relative;
-  top: 90px;
-  left: 170px;
+  position: absolute;
   background: url('../imgs/arrow2.png')no-repeat;
   z-index: 999;
   height: 150px;
   width:305px;
 }
 #step5_Txt{
-  position: relative;
-  left: 400px;
-  top: 93px;
+  position: absolute;
+  left: 275px;
+  top: 142px;
   z-index: 999;
   height: 81px;
   width: 283px;
@@ -354,21 +455,21 @@ pre{
   text-shadow: 0px 0px 3px #fff;
 }
 #next5{
-  position: relative;
-  left: 602px;
-  top: 53px;
+  position: absolute;
+  left: 431px;
+  top: 186px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 #step6{
   display: none;
-  position: absolute;
+  position: relative;
   left: 149px;
   -webkit-animation: fadein 2s;
 }
 #step6_Img{
-  position: relative;
+  position: absolute;
   top: 23px;
   left: -12px;
   background: url('../imgs/arrowcurveup2.png')no-repeat;
@@ -377,9 +478,9 @@ pre{
   width:202px;
 }
 #step6_Txt{
-  position: relative;
+  position: absolute;
   left: 200px;
-  top: -23px;
+  top: 140px;
   z-index: 999;
   height: 150px;
   width: 305px;
@@ -389,9 +490,43 @@ pre{
   text-shadow: 0px 0px 3px #fff;
 }
 #next6{
+  position: absolute;
+  left: 452px;
+  top: 181px;
+  z-index: 999;
+  background-color: #5890AD;
+  color: #000000;
+}
+#step7{
+  display: none;
   position: relative;
-  left: 420px;
-  bottom: 125px;
+  left: 1000px;
+  -webkit-animation: fadein 2s;
+}
+#step7_Img{
+  position: absolute;
+  top: 23px;
+  left: 203px;
+  background: url('../imgs/arrowcurveupright2.png')no-repeat;
+  z-index: 999;
+  height: 138px;
+  width:202px;
+}
+#step7_Txt{
+  position: absolute;
+  left: -45px;
+  top: 116px;
+  z-index: 999;
+  height: 150px;
+  width: 305px;
+  color: #000066;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 0px 3px #fff;
+}
+#next7{
+  position: absolute;
+  top:160px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
@@ -462,4 +597,237 @@ pre{
 .get-tree{
   z-index: 3224;
 
+}
+@keyframes blink {
+  50% { border-color: #0000FF; }
+}
+.blinking{ /*or other element you want*/
+  animation: blink .5s step-end infinite alternate;
+}
+#padding-tree{
+  padding-right: 50px;
+  padding-left: 50px;
+}
+#putTree > li{
+  list-style-type: none;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 10px;
+  padding-left: 25%;
+  cursor: pointer;
+  text-align: justify;
+  width:100%;
+ }
+#putTree > li >a{
+  text-decoration: none;
+
+}
+#putTree>li:hover{
+  background-color: #999999;
+}
+
+/* Base styles for the element that has a tooltip */
+[data-tooltip],
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition:
+  opacity 0.2s ease-in-out,
+  visibility 0.2s ease-in-out,
+  -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition:
+  opacity 0.2s ease-in-out,
+  visibility 0.2s ease-in-out,
+  -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition:
+  opacity 0.2s ease-in-out,
+  visibility 0.2s ease-in-out,
+  transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform:    translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: "";
+}
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after {
+  margin-left: -80px;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  -moz-transform:    translateY(-12px);
+  transform:         translateY(-12px);
+}
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.tooltip-left:before {
+  margin-left: 0;
+  margin-right: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-left-color: #000;
+  border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  -moz-transform:    translateX(-12px);
+  transform:         translateX(-12px);
+}
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.tooltip-bottom:before {
+  margin-top: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: #000;
+  border-bottom-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+  -webkit-transform: translateY(12px);
+  -moz-transform:    translateY(12px);
+  transform:         translateY(12px);
+}
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%;
+}
+
+.tooltip-right:before {
+  margin-bottom: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -moz-transform:    translateX(12px);
+  transform:         translateX(12px);
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+  top: 3px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
 }
