@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-
+  // client side route configuration
   window.app = angular.module('ProFiler', ['ngRoute', 'jsTree.directive']).
   config(['$routeProvider',
     function($routeProvider) {

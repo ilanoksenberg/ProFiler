@@ -1,4 +1,5 @@
 <div ng-controller="HomeCtrl">
+    <!----------Toolbar----------->
     <div class="toolBar">
         <a href="#" id="logo"> </a>
 
@@ -18,10 +19,11 @@
                 <button class='btn btn-danger btn-default' id="reset" type="submit" name="remove_levels" aria-label="left Align" value="delete"><span class="fa fa-times"></span> Reset</button>
             </div>
 
-            <!--/*---------localstorage View list-------*/-->
+
 
         </div>
     </div>
+    <!----------Guide----------->
 
     <div class="guide">
         <div id="step1">
@@ -98,13 +100,18 @@
 
 
 
+    <!----------ProFiler sections----------->
 
     <div class="row">
+        <!----------default view - left section----------->
+
         <div class="section1 col-md-3">
             <div class=" tree-browser ">
               <js-tree tree-events="select_node:nodeSelected"  tree-events="dnd_move:dndMove" tree-ajax="/api/tree" tree-core="tree_core"  tree-rules = "tree_rules" tree-plugins="dnd,state,types,cookies"></js-tree>
             </div>
         </div>
+        <!----------intermediate section (middle)----------->
+
         <div class="section2 col-md-4">
             <div class="toolSection2 ">
                 <h3 >{{searchHeader}}</h3>
@@ -152,6 +159,7 @@
 
             </div>
         </div>
+        <!--------working station - right section--------->
         <div class="section3 col-md-4">
             <div class="toolSection3">
 
@@ -184,6 +192,7 @@
 
             </div>
         </div>
+        <!----tree details section----->
         <div class="section4 col-md-1">
             <div class="toolSection4">
 
@@ -194,7 +203,7 @@
 
             </div>
         </div>
-        <!-- Modal -->
+        <!-- save tree Modal -->
         <div class="modal fade" id="savedtreemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -220,7 +229,7 @@
                 </div>
             </div>
         </div>
-        <!----------saved trees---------->
+        <!----------choose tree modal---------->
         <div class="modal fade" id="openTrees" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -248,7 +257,7 @@
 </div>
 <script>
     $(function () {
-
+        /*------- dynamic Tab-------**future work**-----*/
         $('#myTab li[id=last]').on('click', function () { // Click event on the "Add Tab" button
             console.log('last');
             var nbrLiElem = ($('ul#myTab li').length) - 1; // Count how many <li> there are (minus 1 because one <li> is the "Add Tab" button)
@@ -330,6 +339,7 @@
             console.log("here");
 
         });*/
+         //responsive page height for each section
          var pageHeight = jQuery(window).height();
          console.log(pageHeight-155);
          jQuery('.section1').css({"height": (pageHeight -54)+ 'px' });
@@ -359,7 +369,7 @@
         createJStree(trees);
 
 
-         /*------------------------------handling changes-----------------------*/
+         /*------------------------------handling changes( listeners)-----------------------*/
 
         $('.tree-browser').bind("DOMSubtreeModified",function(){
            // $('li').removeClass('jstree-closed').addClass('jstree-open');
@@ -426,6 +436,7 @@
             /*------------------------set local storage-------------------------------------*/
 
         });
+         /*-----update parent attributes---*/
          function parentUpdate(){
              $('.file-viewer ul >li').each(function() {
                 if($(this).parent().attr('class')==='jstree-children'){
@@ -470,11 +481,6 @@
 
         var Cookie = readCookie();
         hasCookie(Cookie);
-
-
-
-
-
 
 
 
@@ -533,6 +539,7 @@
 
     });
     /*------------------------saveName button-------------------------------------*/
+    /*-----save tree and tree details(name,comments,create,last modified)----*/
     $('#saveName').click(function(){
 
         Date.prototype.today = function () {
@@ -709,8 +716,8 @@
     });
     /*------------------------copy to right button-------------------------------------*/
 
-    $('#copyto').click(function(){
-        /*-------save tree in DB/json file---------*/
+    /*$('#copyto').click(function(){
+        /*-------save tree in DB/json file---------
 
         $('.file-viewer ul').empty();
         $('.tree-preview').empty();
@@ -720,8 +727,8 @@
         $('#copyto').blur();
 
 
-    });
-    /*-----------------------------------build tree-----------------------------------*/
+    });*/
+    /*-----------------------------------build tree-----------------------------------
 
     $("#buildTree").click(function(){
 
@@ -740,7 +747,7 @@
         //$('.data-tree').jstree("destroy").empty();
 
 
-    });
+    });*/
     /*----------------------help handling Functions-----------------------------*/
 
     $('#help').click(function(){
@@ -774,7 +781,7 @@
 
 
 
-    /*------------------------Create Jstree objects-------------------------------------*/
+    /*------------------------reCreate saved tree-------------------------------------*/
     function reCreateSavedTree(values,name){
 
         var obj = parsing(values);
@@ -804,7 +811,7 @@
         });
 
      };
-     /*----------------------------------------------------------------------------*/
+     /*--------------------------saved tree attributes parsing--------------------------------------------------*/
      function parsing(value){
 
         var tree =value.toString().split('treeitem');
@@ -892,14 +899,14 @@
          });
 
        // var temparr = [];
-         treearray=fuckingFunction(treearray,treearray[0].id,0,0);
+         treearray=pathFunction(treearray,treearray[0].id,0,0);
 
          console.log(treearray[0]);
              return treearray;
 
      };var k=0;
-    /*----------------------------------------------------------------------------*/
-    function fuckingFunction(array,Pid,i,k){
+    /*----------------------------------create saved tree path------------------------------------------*/
+    function pathFunction(array,Pid,i,k){
 
         var test3 = array[0].id;
 
@@ -914,7 +921,7 @@
 
             var test = array[j].li_attr.parent;
             if(array[j].li_attr.parent==Pid){
-                array = fuckingFunction(array,array[j].id,i+1,k);
+                array = pathFunction(array,array[j].id,i+1,k);
                 var len = array[i].children.length;
                 array[i].children[array[i].children.length] = array[j];
                 array.splice(j, 1);
@@ -928,7 +935,7 @@
         return array;
 
     }
-    /*----------------------------------------------------------------------------*/
+    /*------------------------------create jstree object----------------------------------------------*/
 
     function createJStree(trees){
         trees.forEach(function(value){
@@ -1024,7 +1031,7 @@
      });
 
 
-     /*----------------------------------------------------------------------------*/
+     /*-------------------------------configuration during guide action---------------------------------------------*/
     function able(flag){
         if(flag){
             $(".toolBar").css("pointer-events","none");

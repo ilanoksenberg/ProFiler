@@ -1,22 +1,17 @@
 (function () {
     'use strict';
-
+    //app main controller
     app.controller('HomeCtrl', ['$scope', '$route', '$window', 'FetchFileFactory',
         function ($scope, $route, $window, FetchFileFactory) {
-
+            //jstree configuration
             $scope.tree_core = {
-
 
                 check_callback: function (operation, node, node_parent, node_position, more) {
                     // operation can be 'create_node', 'rename_node', 'delete_node', 'move_node' or 'copy_node'
                     // in case of 'rename_node' node_position is filled with the new node name
-
-
                     return true;  // allow all other operations
                 }
-
                 //multiple: true
-
             };
             $scope.tree_rules = {
                     multitree : true,
@@ -25,13 +20,11 @@
 
             };
 
-
             $scope.buildHeader = "Build Your Own Tree";
             $scope.searchHeader = "Search In Your Tree";
 
 
             /*------------------------handle node selected-------------------------------------*/
-
             $scope.nodeSelected = function (e, data) {
 
                 console.log("yes");
@@ -137,7 +130,7 @@
             };
 
 
-            /*-----------------------------------create node-----------------------------------*/
+            /*-----------------------------------create node '+' button-----------------------------------*/
 
             $('#create').click(function () {
                 $( "#reset" ).prop( "disabled", false );

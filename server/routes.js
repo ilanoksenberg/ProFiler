@@ -42,6 +42,7 @@
     });
   }
 
+  //node configuration and attributes
   function processNode(_p, f) {
     var s = fs.statSync(path.join(_p, f));
     return {
@@ -94,53 +95,54 @@
         }
       };
   }
-function fileType(text){
-  var temp = text.split('.');
-  console.log(temp);
-  var type = "jstree-custom-file";
-  switch (temp[temp.length - 1]){
-      case 'jpeg':
-      case 'jpg':
-      case 'gif':
-      case 'png' :
-          type+='-img';
-          break;
-      case 'docx':
-      case 'doc':
-          type+='-doc';
-          break;
-      case 'PDF':
-      case 'pdf':
-          type+='-pdf';
-          break;
-      case 'php':
-          type+='-php';
-          break;
-      case 'ppt':
-          type+='-ppt';
-          break;
-      case 'js':
-          type+='-js';
-          break;
-      case 'json':
-          type+='-json';
-          break;
-      case 'css':
-          type+='-css';
-          break;
-      case 'html':
-          type+='-html';
-          break;
-      case 'zip':
-      case 'rar':
-          type+='-zip';
-          break;
-      default :
-          break;
+    //handle types of files function
+    function fileType(text){
+      var temp = text.split('.');
+      console.log(temp);
+      var type = "jstree-custom-file";
+      switch (temp[temp.length - 1]){
+          case 'jpeg':
+          case 'jpg':
+          case 'gif':
+          case 'png' :
+              type+='-img';
+              break;
+          case 'docx':
+          case 'doc':
+              type+='-doc';
+              break;
+          case 'PDF':
+          case 'pdf':
+              type+='-pdf';
+              break;
+          case 'php':
+              type+='-php';
+              break;
+          case 'ppt':
+              type+='-ppt';
+              break;
+          case 'js':
+              type+='-js';
+              break;
+          case 'json':
+              type+='-json';
+              break;
+          case 'css':
+              type+='-css';
+              break;
+          case 'html':
+              type+='-html';
+              break;
+          case 'zip':
+          case 'rar':
+              type+='-zip';
+              break;
+          default :
+              break;
 
-  }
-  return type;
-}
+      }
+      return type;
+    }
   module.exports = router;
 
 }());

@@ -15,6 +15,9 @@ hr {
   border: 0;
   border-top: 1px solid #eee;
 }
+
+/*---------------------------------3 main section css------------------------------------------*/
+
 .tree-browser {
   background-color:#444647;
   border-top:2px solid #8E9194;
@@ -31,7 +34,6 @@ hr {
   padding-bottom: 20px;
   border-top:2px solid #8E9194;
   border-left:1px solid #9EA1A3;
-
   overflow: auto;
 }
 .data-tree{
@@ -65,7 +67,7 @@ hr {
 .toolSection2 h3,.toolSection3 h3{
   float: left;
   margin-right: 14px;
-  font-size: 20.5px;
+  font-size: 19px;
   padding-top: 5px;
 }
 
@@ -79,6 +81,8 @@ hr {
   padding-left: 10px;
   overflow: auto;
 }
+/*-----------------------------------Toolbar css----------------------------------------*/
+
 .toolbar{
   position: relative;
   width: 100%;
@@ -126,7 +130,7 @@ input:focus {
 input#q{
   display: inline-block;
   height: 34px;
-  width:130px;
+  width:110px;
   padding-left: 9px;
 }
 #s{
@@ -159,7 +163,7 @@ pre{
   background-color: #EDF0F2;
   border: none;
 }
-
+/*-------------------------------Type of files img--------------------------------------------*/
 
 .jstree-custom-folder{
   background-image: url('../imgs/folder_icon.png') !important;
@@ -227,6 +231,8 @@ pre{
 .glyphicon.glyphicon-arrow-right{
   left: -1px;
 }
+
+
 .loader {
   position: fixed;
   left: 0px;
@@ -246,10 +252,12 @@ pre{
   outline: none;
   margin-left: 5px;
 }
+/*-----------------------------------Guide css----------------------------------------*/
+
 #step1{
   position: relative;
-  left: 900px;
-  top: 240px;
+  left: 64%;
+  top: 40%;
   -webkit-animation: fadein 2s;
 }
 #step1_Img{
@@ -260,8 +268,10 @@ pre{
   z-index: 999;
   height: 261px;
   width:169px;
-  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera */
-  animation: slideUp 2s;
+  -webkit-animation: fadein 2s;
+
+/*  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera
+  animation: slideUp 2s;*/
 }
 
 #step1_Txt{
@@ -295,9 +305,9 @@ pre{
 }
 
 #step2{
-   position: relative;
-  left: 357px;
-  top: 240px;
+  position: relative;
+  left: 30%;
+  top: 40%;
   -webkit-animation: fadein 2s;
 }
 #step2_Img{
@@ -308,8 +318,10 @@ pre{
   z-index: 999;
   height: 261px;
   width:169px;
-  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera */
-  animation: slideUp 2s;
+  -webkit-animation: fadein 2s;
+
+  /*  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera
+    animation: slideUp 2s;*/
 }
 #step2_Txt{
   position: absolute;
@@ -325,7 +337,7 @@ pre{
 #step3{
    position: relative;
   -webkit-animation: fadein 2s;
-  top: 240px;
+  top: 40%;
 }
 #step3_Img{
   position: absolute;
@@ -335,8 +347,10 @@ pre{
   z-index: 999;
   height: 261px;
   width:169px;
-  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera */
-  animation: slideUp 2s;
+  -webkit-animation: fadein 2s;
+
+  /*  -webkit-animation: slideUp 2s; /* Chrome, Safari, Opera
+    animation: slideUp 2s;*/
 }
 #step3_Txt{
   position: absolute;
@@ -355,9 +369,9 @@ pre{
 #step4{
   display: none;
   position: relative;
-  top: 10px;
-  left: 977px;
-  -webkit-animation: fadein 2s;
+  top: 2%;
+  left: 68%;
+  -webkit-animation: fadein 3s;
 }
 #step4_Img{
   position: absolute;
@@ -390,8 +404,8 @@ pre{
 #step41{
   display: none;
   position: relative;
-  top: 21px;
-  left: 657px;
+  top: 4%;
+  left: 45.5%;
   -webkit-animation: fadein 2s;
 }
 #step41_Img{
@@ -426,8 +440,8 @@ pre{
 #step42{
   display: none;
   position: relative;
-  left: 716px;
-  bottom: 47px;
+  left: 50%;
+  bottom: 5%;
   -webkit-animation: fadein 2s;
 }
 #step42_Img{
@@ -441,8 +455,8 @@ pre{
 }
 #step42_Txt{
   position: absolute;
-  left: 200px;
-  top: 108px;
+  left: 224px;
+  top: 124px;
   z-index: 999;
   height: 81px;
   width: 183px;
@@ -454,17 +468,17 @@ pre{
 #next42{
   position: absolute;
   left: 336px;
-  top: 172px;
+  top: 209px;
   z-index: 999;
   background-color: #5890AD;
   color: #000000;
 }
 #step5{
-   display: none;
-   position: relative;
-   top: 74px;
-   left: 200px;
-   -webkit-animation: fadein 2s;
+  display: none;
+  position: relative;
+  top: 16%;
+  left: 14%;
+  -webkit-animation: fadein 2s;
  }
 #step5_Img{
   position: absolute;
@@ -496,8 +510,8 @@ pre{
 #step6{
   display: none;
   position: relative;
-  left: 706px;
-  bottom: 29px;
+  left: 49%;
+  bottom: 3%;
   -webkit-animation: fadein 2s;
 }
 #step6_Img{
@@ -531,8 +545,8 @@ pre{
 #step7{
   display: none;
   position: relative;
-  left: 961px;
-  bottom: 56px;
+  left: 67%;
+  bottom: 6%;
   -webkit-animation: fadein 2s;
 }
 #step7_Img{
@@ -589,6 +603,8 @@ pre{
 .input-group{
   width: 140px;
 }
+/*-------------------------------Dynamic nav css--------------------------------------------*/
+
 .dynNav{
 
   background-color: #EDF0F2;
@@ -610,6 +626,8 @@ pre{
 .guide{
   position: absolute;
   z-index: 99999999;
+  width: 100%;
+  height: 100%;
 }
 .size { position:relative }
 .size>ul.list { display:none;
@@ -685,6 +703,7 @@ pre{
 #putTree>li:hover{
   background-color: #999999;
 }
+/*---------------------------------tooltip css------------------------------------------*/
 
 /* Base styles for the element that has a tooltip */
 [data-tooltip],
