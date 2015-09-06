@@ -1,4 +1,4 @@
-(function() {
+(function() {//server configuration
   'use strict';
 
   //node modules required
@@ -22,8 +22,8 @@
     extended: true
   }));
   app.use(cookieParser());
-  app.use(express.static(path.join(__dirname, '../client')));
   //server route
+  app.use(express.static(path.join(__dirname, '../client')));
   app.use('/', routes);
   app.set('port', process.env.PORT || 3000);
   var server = app.listen(app.get('port'), function() {

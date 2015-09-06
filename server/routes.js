@@ -5,15 +5,15 @@
   var fs = require('fs');
   var path = require('path');
 
-  /* GET home page. */
+  /*----- GET home page----- */
   router.get('/', function(req, res) {
     res.render('index');
   });
 
-  /* Serve the Tree */
-  router.get('/api/tree', function(req, res) {
+  /* ------serve the Tree----- */
+  router.get('/api/tree', function(req, res) {//loading the tree and send it to the client
     var _p;
-    if (req.query.id == 1) {
+    if (req.query.id == 1) {//start point path
       _p = path.resolve(__dirname, '../../../../talcohen/profiler');
       processReq(_p, res);
 
@@ -27,10 +27,11 @@
     }
   });
 
-  /* Serve a Resource */
+  /* -------serve a Resource ------*/
   router.get('/api/resource', function(req, res) {
     res.send(fs.readFileSync(req.query.resource, 'UTF-8'));
   });
+    // reading all the files/folders in that folder.
   function processReq(_p, res) {
     var resp = [];
     fs.readdir(_p, function(err, list) {
@@ -43,7 +44,7 @@
   }
 
   //node configuration and attributes
-  function processNode(_p, f) {
+  function processNode(_p, f) {// take a file/folder and return a Tree Node object for that file/folder.
     var s = fs.statSync(path.join(_p, f));
     return {
 
@@ -67,7 +68,7 @@
           },
           "children": s.isDirectory(),
 
-        callback : {
+        callback : {//for logs
             beforechange: function() { log("About to change"); return true; },
             beforeopen  : function() { log("About to open"); return true; },
             beforeclose : function() { log("About to close"); return true; },
